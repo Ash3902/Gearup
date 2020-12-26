@@ -1,8 +1,175 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Gear Up Lead | Home{% endblock title %}
-
+{% block navID %}homeNav{% endblock navID %}
 {% block content %}
-<h1>GearUpLead</h1>
+<style>
+    span1:before
+        {
+            content: '';
+            animation: animate infinite 10s;
+        }
+        @keyframes animate
+        {
+            0%
+            {
+                content: 'Awesome';
+                color: yellow;
+            }
+            20%
+            {
+                content: 'Programmer';
+                color: yellow;
+            }
+            40%
+            {
+                content: 'Developer';
+                color: yellow;
+            }
+            60%
+            {
+                content: 'Designer';
+                color: yellow;
+            }
+            80%
+            {
+                content: 'Creative';
+                color: yellow;
+            }
+            100%
+            {
+                content: 'Amazing';
+                color: yellow;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #textHeader{
+                font-size: 30px;
+            }
+            #textSubHeader{font-size:15px;}
+        }
+        @media screen and (min-width: 601px) {
+            #textHeader{
+                font-size: 60px;
+            }
+            #textSubHeader{font-size:30px;}
+        }
+</style> 
+<section class="home_section" style="background-image:url('/static/images/turnover-3966586_1920-2.jpg'); width:100%; height:80vh;">
+    <div style="width: 100%; height:80vh; background-color:rgba(0,0,0,0.5);">
+        <div class="container" style="font-family: sans-serif;">
+            <h1 class="text-white" style="padding-top: 150px;" id="textHeader" >Accelerating Business <br/> Potetial</h1>
+            <p class="text-white pt-4" id="textSubHeader" >Accelerating Business <span1></span1></p>
+            <div class="text-left">
+                <a href="" class="btn btn-primary rounded-pill btn-lg mr-2 mt-3">Get Start Today</a>
+                <a href="" class="btn btn-outline-light rounded-pill btn-lg mt-3">Know more</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section  >
+    <div class="container">
+        <h1 class="text-center p-5 mt-4" style="font-family: sans-serif;">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque natus eum magnam reiciendis alias neque "  </h1>
+        <div class="row ">
+            <div class="card col-md-3 shadow-lg p-4 text-center">
+                <p class="text-center">
+                    <img class="text-center" src="/static/images/growth.png" width="60px" alt="">
+                </p>
+                <h4 class="pt-2">Growth</h4>
+                <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus amet magnam aliquam earum rerum adipisci illum voluptas ex distinctio!</p>
+            </div>
+            <div class="card col-md-3 shadow-lg p-3 text-center" >
+                <p class="text-center">
+                    <img class="text-center" src="/static/images/engagement.png" width="60px" alt="">
+                </p>
+                <h4 class="pt-2">Engagement</h4>
+                <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, magnam. Quaerat placeat sint a molestias quo facilis temporibus nobis! Quae dignissimos repudiandae eius blanditiis id asperiores odio commodi nulla quia?</p>    
+            </div>
+            <div class="card col-md-3 shadow-lg p-3 text-center" >
+                <p class="text-center">
+                    <img class="text-center" src="/static/images/accountability.png" width="70px" alt="">
+                </p>
+                <h4 class="pt-2">Accountability</h4>
+                <p class="pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab qui neque nulla voluptas nihil consequatur temporibus aperiam eius, illum consequuntur itaque, laboriosam, ullam aut repellat. Tenetur eius labore officiis ex.</p>
+            </div>
+            <div class="card col-md-3 shadow-lg p-3 text-center" >
+                <p class="text-center">
+                    <img class="text-center" src="/static/images/result.png" width="70px" alt="">
+                </p>
+                <h4 class="pt-2">Results Driven</h4>
+                <p class="pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio rem sed minima id labore eligendi, nisi nihil necessitatibus debitis voluptatem quasi ipsam consequatur ut nam exercitationem iure neque deleniti eius.</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<section class="container" style="width:100%;">
+    <div class="row py-5 align-items-center">
+        <div class="col-md-6">
+            <img src="{% static 'images/cropped-growth-1953662_1280.jpg' %}" alt=" " width="100%" height="100%">
+        </div>
+        <div class="col-md">
+            <h1 class="mb-5">Helping You Grow Your Business</h1>
+            
+            <h5 class="my-4">We help you with all four steps of getting new business customers:</h5>
+            <ol>
+                <li>Finding businesses who might need your products and services.</li>
+                <li>Contacting those businesses.</li>
+                <li>Finding out how likely those businesses are to buy from you.</li>
+                <li>Closing sales.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h1 >Our Services</h1>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                    <p><a class="dropdown-toggle text-decoration-none">Marketing Qualified Leads (MQL) </a></p>
+                    <p><a class="dropdown-toggle text-decoration-none">Sales Qualified Leads (SQL)</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a class="dropdown-toggle text-decoration-none">B2B Database Management </a></p>
+                <p><a class="dropdown-toggle text-decoration-none">Sales Qualified Leads (SQL)</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a class="dropdown-toggle text-decoration-none">B2B Lead Generation</a></p>
+                <p><a class="dropdown-toggle text-decoration-none">Lead Nurturing</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a class="dropdown-toggle text-decoration-none">BANT Qualified Leads (BANT) </a></p>
+                <p><a class="dropdown-toggle text-decoration-none">Account Based Marketing</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mb-5" style="width: 100%;">
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <a class="text-decoration-none pt-5" href="#"><h1>Businesses We Serve</h1></a>
+                <h4 class="mt-5 text-dark">The businesses we serve include: </h4>
+                <ul class="mt-4">
+                    <li>Software As A Service Companies</li>
+                    <li>Software Companies </li>
+                    <li>IT Companies </li>
+                    <li>Pharma Companies </li>
+                    <li>Startups</li>
+                    <li>Real Estate Businesses </li>
+                    <li>Education</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/static/images/architecture.jpg" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock content %}
