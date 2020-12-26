@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <meta name="description" content="{% block desc %}
     {% endblock desc %}">
     <!-- Bootstrap CSS -->
@@ -18,8 +19,15 @@
     <style>
       .nav-active{
         color:rgb(0, 132, 255) !important;
-        border-bottom: 3px solid rgb(0, 132, 255);
+        /* border-bottom: 3px solid rgb(0, 132, 255); */
         font-weight: bold;
+      }
+      .nav-link{
+        font-weight: bold;
+      }
+      .nav-link:hover{
+        color:rgb(0, 132, 255) !important;
+        border-bottom: 3px solid rgb(0, 132, 255);
       }
     </style>
   </head>
@@ -41,12 +49,12 @@
     window.addEventListener("scroll",function(){
         var nav = document.querySelector("nav");
         
-        if (window.scrollY > 100){
-          nav.classList.remove("navbar-dark");
-          nav.classList.add("navbar-light","bg-white");
+        if (window.scrollY > 400){
+          // nav.classList.remove("navbar-dark");
+          nav.classList.add("fixed-top","shadow");
         }else {
-          nav.classList.add("navbar-dark");
-          nav.classList.remove("navbar-light","bg-white");
+          // nav.classList.add("navbar-dark");
+          nav.classList.remove("fixed-top","shadow");
         }
     });  
     document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
