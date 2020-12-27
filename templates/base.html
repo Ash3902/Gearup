@@ -29,14 +29,25 @@
         color:rgb(0, 132, 255) !important;
         border-bottom: 3px solid rgb(0, 132, 255);
       }
+      #back-top_button{
+        z-index: 100;
+        position: fixed;
+        top:90%;
+        right:10%
+        /* transform: translate(90%,10%) ; */
+      }
       html{
         scroll-behavior: smooth !important;
       }
     </style>
   </head>
   <body>
+    <a href="#" class="bg-primary btn" id="back-top_button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-circle-fill text-light" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+    </svg></a>
     {% include 'navbar.html' %}
     <div id="nav-bottom"></div>
+
     {% block content %}
 
     {% endblock content %}
@@ -54,14 +65,14 @@
         var nav = document.querySelector("nav");
         var body = document.querySelector("#nav-bottom");
         
-        if (window.scrollY > 300){
+        if (window.scrollY > 380){
           // nav.classList.remove("navbar-dark");
           nav.classList.add("fixed-top","shadow");
-          body.classList.add("pt-5");
+          body.style.padding = "46px";
         }else {
           // nav.classList.add("navbar-dark");
           nav.classList.remove("fixed-top","shadow");
-          body.classList.remove("pt-5");
+          body.style.padding = "0px";
         }
     });  
     document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
