@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg text-white navbar-light bg-white ">
       <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img src="{% static 'images/favicon.ico' %}" width="60px" alt="">
             GearUpLead
           </a>
@@ -12,7 +12,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-lg-5 mr-auto">
                   <li class="nav-item pr-2">
-                      <a class="nav-link "  id="homeNav" href="#home">HOME</a>
+                      <a class="nav-link "  id="homeNav" href="/">HOME</a>
                   </li>
                   <li class="nav-item pr-2">
                     <a class="nav-link" id="coreNav" href="#home">SERVICES</a>
@@ -20,6 +20,9 @@
                 <li class="nav-item pr-2">
                     <a class="nav-link" id="busNav" href="#home">WRITE FOR US</a>
                 </li>
+                <li class="nav-item pr-2">
+                  <a class="nav-link" id="aboutNav" href="{% url 'about-us' %}">ABOUT US</a>
+              </li>
               </ul>
               <ul class="navbar-nav p-2 ml-auto">
                 <li class="nav-item pr-2">
@@ -35,7 +38,7 @@
                     </div>
                   </li>
                 <li class="nav-item bg-primary rounded-pill pr-2">
-                    <a class="nav-link text-light pl-2" id="contactNav" href="#home">CONTACT US</a>
+                    <a class="nav-link text-light pl-2" id="contactNav" target="_" href="{% url 'contact-us' %}">CONTACT US</a>
                 </li>
               </ul>
           </div>
