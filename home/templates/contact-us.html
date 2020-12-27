@@ -17,26 +17,27 @@
             <div class="col-md-5 contact_us">
                 <div class="card shadow" style="border-radius: 20px;">
                     <h2 class="text-center mt-4"> <b> Contact Us </b></h2>
-                    <form action="" class="p-4">
+                    <form method="POST" class="p-4">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"> Name </label>
-                            <input type="email" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
+                            <input type="text" name="name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"> Email address </label>
-                            <input type="text" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
+                            <input type="email" name="email" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"> Phone Number. </label>
-                            <input type="text" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
+                            <input type="tel" name="number" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                            <textarea class="form-control shadow-none" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea class="form-control shadow-none" name="message" id="exampleFormControlTextarea1" rows="5"></textarea>
                           </div>
                           <div class="mb-3 mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-lg rounded-pill btn-block">Submit</button>
+                            <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill btn-block">Submit</button>
                           </div>
+                          {%csrf_token%}
                     </form>
                 </div>
             </div> 
