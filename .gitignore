@@ -6,4 +6,3 @@ admin
 # settings.py
 gearuplead/settings.py
 *.pyc
-gearuplead/wsgi.py
