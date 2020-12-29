@@ -1,7 +1,14 @@
 from django.shortcuts import render,redirect
-from .models import Contact_us,Blog
+from .models import Contact_us,Blog,Home_setion_1,Home_setion_2,Home_section_last,Why_Choose_us,Our_client
 from django.views.generic import ListView
 # Create your views here.
+def index(request):
+    section1 = Home_setion_1.objects.first()
+    print(section1.heading)
+    return render(request,"home.html",{
+        "section1" : section1
+    })
+
 class BlogList(ListView):
     queryset = Blog.objects.filter(publish_now=True).exclude(add_to_feature_post=True)
     template_name = "blog.html"
