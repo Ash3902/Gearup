@@ -1,6 +1,23 @@
 from django.shortcuts import render,redirect
-from .models import Contact_us
+from .models import Contact_us,Blog
+from django.views.generic import ListView
 # Create your views here.
+class BlogList(ListView):
+    queryset = Blog.objects.filter(publish_now=True).exclude(add_to_feature_post=True)
+    template_name = "blog.html"
+    paginate_by = 10
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        featured_blog = Blog.objects.filter(add_to_feature_post=True).order_by("-id")[:3]
+        # print(featured_blog)
+        context['featured_blog'] = featured_blog
+        return context
+def blog_view(request,pk,slug):
+    blog = Blog.objects.get(id=pk)
+
+    return render(request,"blog-detail.html",{"blog":blog})
+
 def contact(request):
     if request.method == "POST":
         name = request.POST["name"]

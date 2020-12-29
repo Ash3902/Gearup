@@ -5,7 +5,8 @@ urlpatterns = [
     path("",TemplateView.as_view(template_name="home.html")),
     path("contact-us",views.contact,name="contact-us"),
     path("about-us",TemplateView.as_view(template_name="about-us.html"),name="about-us"),
-    path("blog",TemplateView.as_view(template_name="blog.html"),name="blog"),
+    path("blog",views.BlogList.as_view(),name="blog"),
+    path("<int:pk>/<slug>",views.blog_view,name="blog-detail"),
 ]
 
             

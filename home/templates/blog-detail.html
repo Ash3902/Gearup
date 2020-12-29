@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Gear Up Lead | Home{% endblock title %}
+{% block navID %}{% endblock navID %}
+{% block desc %}
+{{blog.meta_description}}
+{% endblock desc %}
+{% block style %}
+<link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+{% endblock style %}
+{% block content %}
+<section>
+    <div class="bg-primary py-5">
+        <div class="container">
+            <h1 class="text-light text-capitalize"> <b> {{blog.heading}}</b></h1>
+            <small class="text-light"> {{blog.date}}</small>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="row mt-1">
+            <div class="col-md-8 mx-auto overflow-auto">
+                
+                <!-- <h4>{{blog.heading}}</h4>
+                <small class="pt-5">{{blog.author_name}}</small><br>
+                <small class="pt-5"> {{blog.date}}</small> -->
+                <p class="pt-4">
+                    <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path d="M5.354 5.119L7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.519.519 0 0 1-.146.05c-.341.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.171-.403.59.59 0 0 1 .084-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027c.08 0 .16.018.232.056l3.686 1.894-.694-3.957a.564.564 0 0 1 .163-.505l2.906-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.002 2.223 8 2.226v9.8z"/>
+                    </svg>
+                </p>
+                <p class="pt-4 overflow-auto w-100">{{blog.description|safe}}</p>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quo et fuga amet, similique illo, ipsam, obcaecati praesentium quas mollitia distinctio aspernatur. Ullam repellendus explicabo expedita quos a non quis?  Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit blanditiis perspiciatis sequi. Quas quis explicabo iure totam, placeat, aliquam dolores quos necessitatibus quisquam quidem quae blanditiis sint fuga repudiandae culpa?</p>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quo et fuga amet, similique illo, ipsam, obcaecati praesentium quas mollitia distinctio aspernatur. Ullam repellendus explicabo expedita quos a non quis?  Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit blanditiis perspiciatis sequi. Quas quis explicabo iure totam, placeat, aliquam dolores quos necessitatibus quisquam quidem quae blanditiis sint fuga repudiandae culpa?</p>
+             <br> <h5 class="font-italic text-muted text-capitalize">~{{blog.author_name}}</h5><br>
+                
+            </div>
+            <div class="col-md-3 mx-auto">
+                <h2 class="mt-4" >Topics</h2>
+                <hr class="w-25" style="border-bottom: 4px solid rgba(0,0,0,1);">
+                <div class="col-md-12">
+                    <p>Recent Posts</p>
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{% static "tinymce/js/prism.js" %}"></script>
+{% endblock content %}
