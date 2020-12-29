@@ -1,0 +1,82 @@
+<!-- {% extends 'base.html' %} -->
+{% load static %}
+{% block title %}Gear Up Lead | Blog{% endblock title %}
+{% block navID %}dropdownMenuButton{% endblock navID %}
+{% block style %}
+<style>
+    .top-up { 
+    transition: all .5s ease-in-out; 
+    }
+
+    .top-up:hover { 
+    transform: translateX(1,2); 
+    }
+</style>
+{% endblock style %}
+{% block content %}
+
+<section class="bg-primary w-100" style="position: absolute; padding-bottom:70px;padding-top:30px;">
+    <div class="container">
+        <h1 class="text-light " style="padding-top: 40px;font-weight:600;" >Featured posts</h1>
+        <hr class="w-25" style="border-bottom: 4px solid rgb(245, 245, 245);">
+    </div>
+</section>
+
+<section style="position: relative; padding-top:190px;">
+    <div class="container">
+        <div class="row">
+            {% for i in "123"%}
+            <div class="col-md-3  card mx-auto p-0 px-0 shadow overflow-hidden top-up" style="border-radius:10px">
+                <img src="/static/images/stock-market-courses-for-beginners.jpg" style="object-fit: cover;" class="card-img-top grow" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima beatae numquam, </h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p>
+                    <small>Deepak Silawat 10-10-2020</small>
+                </p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+<section class="pt-5">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 mx-auto">
+                <h2 class="ml-lg-3" style=";">More posts</h2>
+                <hr class="w-50" style="border-bottom: 4px solid rgba(0,0,0,1);">
+                <div class="row m-lg-5">
+                    <div class="col-md-11">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                            <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto">
+                {% for i in "123"%} 
+                <div class="card mt-4 bg-light" >
+                    <div class="card-body">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cum quaerat dicta maiores et quasi, tenetur nihil quo ipsam possimus nostrum eum numquam, perspiciatis ab, officiis optio tempore libero natus?</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p>
+                        <small>Deepak Silawat 10-10-2020</small>
+                    </p>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock content %}
