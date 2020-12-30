@@ -45,75 +45,71 @@
 <section class="about_us bg-primary">
     <div class="about_us_div">
         <div class="container pb-5">
-            <h1 class="text-center text-white" style="padding: 70px;" > About Us</h1>
+            <h1 class="text-center text-white" style="padding: 70px;" >{{about.title}} </h1>
         </div>
     </div>
 </section>
     
+{%for section in about.about_us_section_set.all %}
+{%if forloop.counter|divisibleby:"2" %}
 <section>
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-6">
                 <div class="parent_div">
                     <div class="child_div">
-                        <img class="w-100 h-100" src="/static/images/person.jpg" alt="" style="object-fit:cover;">
+                        <img class="w-100 h-100" src="{{section.image.url}}" alt="" style="object-fit:cover;">
                     </div>
                 </div>
             </div>
             <div class="col-md-6" style="padding-top: 100px;">
-                <h2>About GearUpLead</h2>
+                <h2>{{section.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
                 <p class="pt-3">
-                    <h5 class="" style="font-family: Times;" >
-                        
-
-We are a startup with a highly dedicated sales team that empower entrepreneurs, startups and global businesses to find the best MQL to SQL leads that produce high quality sales and develop long-term relationships.
-
-We shall eliminate the complications from finding ideal leads, and from organizing and contacting clients best-suited to your products and services.
-
-                    </h5>
+                    <h5 class="" style="font-family: Times;" >{{section.description }} </h5>
                 </p>
                 <p class="pt-3">
-                    <h5 class="" style="font-family: sans-serif;" >
+                    <!-- <h5 class="" style="font-family: sans-serif;" >
                     
 
 An end to end lead generation company in the B2B space. The sole purpose of the company lies in the fact that your sales funnel should never dry-up. We are a team dedicated to providing you with well qualified (BANT) leads for your organization helping in revenue generation.
 
     
-                    </h5>
+                    </h5> -->
                 </p>
             </div>
         </div>
     </div>
 </section>
-
+{%else%}
 <section class="" style="padding-top: 100px;">
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-6">
-                <h2>About GearUpLead</h2>
+                <h2>{{section.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
                 <p class="pt-3">
                     <h5 class="" style="font-family: sans-serif;" >
-                        We specialize in bringing the core decision-makers on the discussion table catalyzing the sales process. Our team includes team members with immense experience in the field. We believe in research-oriented lead generation because we understand that pace is important but the direction is more important. 
+                        {{section.description }}
                     </h5>
                 </p>
                 <p class="pt-3">
-                    <h5 class="" style="font-family: sans-serif;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eius voluptatibus quidem non accusantium facere quaerat quasi quia amet, possimus recusandae aspernatur voluptates reprehenderit harum ipsa nisi porro perferendis architecto?</h5>
+                    <!-- <h5 class="" style="font-family: sans-serif;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eius voluptatibus quidem non accusantium facere quaerat quasi quia amet, possimus recusandae aspernatur voluptates reprehenderit harum ipsa nisi porro perferendis architecto?</h5> -->
                 </p>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-4">
                 <div class="parent_div">
                     <div class="child_div">
-                        <img class="w-100 h-100" src="/static/images/person.jpg" alt="" style="object-fit:cover;">
+                        <img class="w-100 h-100" src="{{section.image.url}}" alt="" style="object-fit:cover;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+{%endif%}
+{%endfor%}
 <section class="" style="padding-top: 100px;">
     <div class="container mt-5">
         <h2 style="font-family: sans-serif;" class=" text-center">Company Highlights</h2>

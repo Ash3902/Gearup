@@ -6,7 +6,7 @@
 <style>
     .home_section
     {
-        background-image: url('/static/images/pexels-kaboompics-com-6224.jpg');
+        background-image: url('{{section1.background_image.url}}');
         background-size: cover;
         width: 100%;
         height: 85vh;
@@ -112,8 +112,18 @@
 <section  >
     <div class="container">
         <h1 class="text-center p-5 mt-4" style="font-family: sans-serif;">
-            Accelerate Your Business With. </h1>
+            {{section2}}
+        </h1>
         <div class="row ">
+        {% for sec in section2.home_section_2_card_set.all %} 
+            <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
+                <p class="text-center">
+                    <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
+                </p>
+                <h4 class="pt-2">{{sec.title}}</h4>
+                <p class="pt-3">{{sec.description}}</p>
+            </div >
+        {%endfor%}
             <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
                 <p class="text-center">
                     <img class="text-center" src="/static/images/growth.png" width="60px" alt="">
@@ -166,20 +176,23 @@ Producing results.</p>
     <div class="container p-2">
         <h1  class="mt-3 text-center text-light">Our Services</h1>
         <div class="row my-5 " >
+            {% for ser in section3 %}
             <div class="col-md-4 our_section">
                 <div class="card mt-2">
-                <h4 class="text-center p-4" >Free</h4>
+                <h4 class="text-center p-4" >{{ser.service_name}}</h4>
                 <ul id="our-serivice-list">
-                    <li>B2B Lead Generation</li> <br>
-                    <li>B2B Database Management</li>
+                    {% for text in ser.service_text_set.all%}
+                        <li>{{text.text}}</li>
+                    {%endfor%}
+                    <!-- <li>B2B Lead Generation</li> <br>
                     <li>Demand Generation </li>
                     <li>Sales Qualified Leads (SQL)</li> 
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    
+                    <li>Marketing Qualified Leads (MQL)</li> -->
                 </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-primary btn-lg btn-block">Try for free</button></p>
+                <p class="text-center p-4"><button type="button" class="btn btn-primary btn-lg btn-block">{{ser.service_price_text}}</button></p>
                 </div>
             </div>
+            {%endfor%}
             <!-- <div class="col-md-1"></div> -->
             <div class="col-md-4 our_section">
                 <div class="card mt-2">
@@ -226,17 +239,19 @@ Producing results.</p>
         </div>
         <div class="col-1"></div>
         <div class="col-md-5">
-            <h1 class="mb-5"> <b>Helping You To Grow Your Business</b> </h1>
+            <h1 class="mb-5"> <b>{{section4.heading }}</b> </h1>
             
-            <h5 class="my-4">We help you with all four steps of getting new business customers:</h5>
+            <h5 class="my-4">{{section4.sub_heading}}</h5>
             <ol>
-                <li>Finding businesses who might need your products and services.</li>
-                <li>Contacting those businesses.</li>
+                {% for text in section4.why_choose_us_text_set.all %}
+                <li>{{text.text}}</li>
+                {%endfor%}
+                <!-- <li>Finding businesses who might need your products and services.</li>
                 <li>Finding out how likely those businesses are to buy from you.</li>
-                <li>Closing sales.</li>
+                <li>Closing sales.</li> -->
             </ol>
             <div>
-                <a href="#" class="btn btn-outline-primary rounded-pill btn-lg my-4">Load More </a>
+                <a href="{{section4.url}}" class="btn btn-outline-primary rounded-pill btn-lg my-4">Load More </a>
             </div>
         </div>
     </div>
@@ -244,16 +259,19 @@ Producing results.</p>
 
 <section class="mb-5" style="width: 100%;background-color:rgb(216, 216, 216); ">
     <div class="container mb-5">
-        <h1 class="text-center pt-5">Our Clients</h1>
+        <h1 class="text-center pt-5">{{section5.heading}}</h1>
         <div class="row pb-5 pt-4">
+            <!-- <b class=" text-center ">Google</b> -->
+            {%for client in section5.client_detail_set.all %}
             <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
-                <!-- <b class=" text-center ">Google</b> -->
-                <img src="http://llvm.org/devmtg/2015-10/logos/Microsoft-logo_rgb_c-gray.png" alt="" width="100%" height="100%" style="object-fit: cover;">
+                <img src="{{client.client_image.url}}" alt="" width="100%" height="100%" style="object-fit: cover;">
+                <!-- <img src="http://llvm.org/devmtg/2015-10/logos/Microsoft-logo_rgb_c-gray.png" alt="" width="100%" height="100%" style="object-fit: cover;"> -->
             </div>
-            <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
-                <!-- <b class=" text-center ">Google</b> -->
+                {%endfor%}
+            <!-- <b class=" text-center ">Google</b> -->
+            <!-- <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49947510-0686-4cad-b5c8-e5ee95492c91/d98chn1-5c099699-2816-4088-a031-d0558ffdb48b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi80OTk0NzUxMC0wNjg2LTRjYWQtYjVjOC1lNWVlOTU0OTJjOTEvZDk4Y2huMS01YzA5OTY5OS0yODE2LTQwODgtYTAzMS1kMDU1OGZmZGI0OGIucG5nIn1dXX0.uObOMFwdh5C_kUPAfizm9KVzBQZgQ4Yr1aaK4cDHcuE" alt="" width="100%" height="100%" style="object-fit:contain">
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -261,19 +279,21 @@ Producing results.</p>
     <div class="container mt-5" style="width: 100%;">
         <div class="row mt-5">
             <div class="col-md-6">
-                <a class="text-decoration-none pt-5" href="#"><h1>Businesses We Serve</h1></a>
-                <h4 class="mt-5 text-dark">The businesses we serve include: </h4>
+                <a class="text-decoration-none pt-5" href="#"><h1>{{section6.heading}}</h1></a>
+                <h4 class="mt-5 text-dark">{{section6.sub_heading}}</h4>
                 <ul class="mt-4">
-                    <li>Software As A Service Companies</li>
+                    {%for text in section6.home_section_last_text_set.all %}
+                    <li> {{text.text}} </li>
+                    {%endfor%}
+                    <!-- <li>Software As A Service Companies</li>
                     <li>Software Companies </li>
-                    <!-- <li>IT Companies </li> -->
                     <li>Startups</li>
                     <li>Real Estate Businesses </li>
-                    <li>Education</li>
+                    <li>Education</li> -->
                 </ul>
             </div>
             <div class="col-md-6 overflow-hidden p-0" >
-                <img src="/static/images/pexels-nataliya-vaitkevich-6120217.jpg" class="grow" width="100%" height="100%" alt="">
+                <img src="{{section6.image.url}}" class="grow" width="100%" height="100%" alt="">
             </div>
         </div>
     </div>

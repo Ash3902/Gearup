@@ -1,12 +1,32 @@
 from django.shortcuts import render,redirect
-from .models import Contact_us,Blog,Home_setion_1,Home_setion_2,Home_section_last,Why_Choose_us,Our_client
+from .models import (
+    Contact_us,
+    Blog,
+    Home_section_1,
+    Home_section_2,
+    Home_section_last,
+    Why_Choose_us,
+    Our_client,
+    Manage_service,
+    About_us
+)
 from django.views.generic import ListView
 # Create your views here.
 def index(request):
-    section1 = Home_setion_1.objects.first()
+    section1 = Home_section_1.objects.first()
+    section2 = Home_section_2.objects.first()
+    section3 = Manage_service.objects.all()[:3]
+    section4 = Why_Choose_us.objects.first()
+    section5 = Our_client.objects.first()
+    section6 = Home_section_last.objects.first()
     # print(section1.heading)
     return render(request,"home.html",{
-        "section1" : section1
+        "section1" : section1,
+        "section2" : section2,
+        "section3" : section3,
+        "section4" : section4,
+        "section5" : section5,
+        "section6" : section6,
     })
 
 class BlogList(ListView):
@@ -35,3 +55,9 @@ def contact(request):
         Contact_us.objects.create(name=name,email=email,number=number,message=message).save()
         return redirect("contact-us")
     return render(request,"contact-us.html")
+
+def about_us(request):
+    about = About_us.objects.first()
+    return render(request,"about-us.html",{
+        'about':about
+    })
