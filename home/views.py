@@ -4,7 +4,7 @@ from django.views.generic import ListView
 # Create your views here.
 def index(request):
     section1 = Home_setion_1.objects.first()
-    print(section1.heading)
+    # print(section1.heading)
     return render(request,"home.html",{
         "section1" : section1
     })
