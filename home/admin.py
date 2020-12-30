@@ -60,5 +60,5 @@ admin.site.register(Blog)
 
 
 admin.site.site_title = "GearUpLead"
-admin.site.site_header = "GearUplead Administrative"
+admin.site.site_header = "GearUpLead Administrative"
 # admin.site.index_title = "GearUpLead"

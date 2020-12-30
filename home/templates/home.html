@@ -115,57 +115,15 @@
             {{section2}}
         </h1>
         <div class="row ">
-        {% for sec in section2.home_section_2_card_set.all %} 
-            <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
-                <p class="text-center">
-                    <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
-                </p>
-                <h4 class="pt-2">{{sec.title}}</h4>
-                <p class="pt-3">{{sec.description}}</p>
-            </div >
-        {%endfor%}
-            <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/growth.png" width="60px" alt="">
-                </p>
-                <h4 class="pt-2">Growth</h4>
-                <p class="pt-3">
-                We resolve customer complaints quickly.
-                
-                We are provide real time customer services. 
-                
-               We are recommending new products or services based on customer interest or behavior.</p>
-            </div >
-            <div class="card col-md-3  p-3 text-center  showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/engagement.png" width="60px" alt="">
-                </p>
-                <h4 class="pt-2">Engagement</h4>
-                <p class="pt-3">High Quality.
-Flexible resources allocation.
-Predictable support.
-Handling future needs of the customer.</p>    
-            </div>
-      <div class="card col-md-3  p-3 text-center showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/accountability.png" width="70px" alt="">
-                </p>
-                <h4 class="pt-2">Accountability</h4>
-                <p class="pt-3">
-                Honesty and Integrity. Trust. Problem Solving and Technical Expertise. Ability to Change. Accept personal responsibility for tackling an issue. Tell us your requirement & let our experts find verified products for you.
-               </p>
-            </div>
-            <div class="card col-md-3  p-3 text-center showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/result.png" width="70px" alt="">
-                </p>
-                <h4 class="pt-2">Results Driven</h4>
-                <p class="pt-3">We always pay attention to our shortcomings. For customers satisfaction. Top level management.
-Structure and roles.
-Embracing pressure.
-Deadline focused.
-Producing results.</p>
-            </div>
+            {% for sec in section2.home_section_2_card_set.all %} 
+                <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
+                    <p class="text-center">
+                        <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
+                    </p>
+                    <h4 class="pt-2">{{sec.title}}</h4>
+                    <p class="pt-3">{{sec.description}}</p>
+                </div >
+            {%endfor%}
         </div>
     </div>
     
@@ -194,37 +152,7 @@ Producing results.</p>
             </div>
             {%endfor%}
             <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-4 our_section">
-                <div class="card mt-2">
-                <h4 class="text-center p-4" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
-                    <path d="M5.354 5.119L7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.519.519 0 0 1-.146.05c-.341.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.171-.403.59.59 0 0 1 .084-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027c.08 0 .16.018.232.056l3.686 1.894-.694-3.957a.564.564 0 0 1 .163-.505l2.906-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.002 2.223 8 2.226v9.8z"/>
-                  </svg>Primium</h4>
-                <ul id="our-serivice-list">
-                    <li>₹100/month</li>
-                    <li>Include all free service</li> <br>
-                    <li>B2B Lead Generation</li>
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    <li>Sales Qualified Leads (SQL)</li>
-                    <li>BANT Qualified Leads (BANT)</li>
-                    <li>Account Based Marketing</li>
-                </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-success btn-lg btn-block">Try it primium</button></p>
-            </div></div>
-            <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-4 our_section">
-                <div class="card mt-2">
-                <h4 class="text-center p-4" >Businees</h4>
-                <ul id="our-serivice-list">
-                    <li>B2B Database Management</li>
-                    <li>Sales Qualified Leads (SQL)</li> <br>
-                    <li>B2B Lead Generation</li>
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    <li>Sales Qualified Leads (SQL)</li>
-                    <li>BANT Qualified Leads (BANT)</li>
-                    <li>Account Based Marketing</li>
-                </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-dark btn-lg btn-block">Try for free</button></p>
-            </div></div>
+            
         </div>
     </div>
 </section>
