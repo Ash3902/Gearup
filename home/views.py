@@ -11,6 +11,8 @@ from .models import (
     About_us
 )
 from django.views.generic import ListView
+from django.contrib import messages
+
 # Create your views here.
 def index(request):
     section1 = Home_section_1.objects.first()
@@ -61,3 +63,8 @@ def about_us(request):
     return render(request,"about-us.html",{
         'about':about
     })
+
+
+def write_for_us(request):
+    messages.success(request,'Your feedback is saved please do not submit again')
+    return render(request,'write-for-us.html')

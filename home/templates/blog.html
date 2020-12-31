@@ -31,7 +31,7 @@
                             </svg>
                             
                             <h5 class="card-title pt-4 text-dark">{{blog.heading}}</h5>
-                            <p class="card-text text-dark">{{blog.description|safe|truncatewords:20}}</p>
+                            <p class="card-text text-dark">{{blog.description|safe|striptags|truncatewords:20}}</p>
                             <p>
                                 <small>{{blog.author_name}} {{blog.date}}</small>
                             </p>
@@ -67,7 +67,7 @@
                     <a class=" text-decoration-none" href="{% url 'blog-detail' blog.id blog.slug %}">
                         <div class="card-body">  
                             <h5 class="card-title text-dark">{{blog.heading}}</h5>
-                            <p class="card-text text-dark">{{blog.description|safe|truncatewords:50}}</p>
+                            <p class="card-text text-dark">{{blog.description|safe|striptags|truncatewords:50}}</p>
                             <p>
                                 <small>{{blog.author_name}} {{blog.date}}</small>
                             </p>

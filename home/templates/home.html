@@ -6,7 +6,7 @@
 <style>
     .home_section
     {
-        background-image: url('{{section1.background_image.url}}');
+        background-image: url('{%if section1.background_image %}{{section1.background_image.url}}{%else%}{%endif%}');
         background-size: cover;
         width: 100%;
         height: 85vh;

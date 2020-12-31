@@ -59,6 +59,32 @@
 
     {% endblock content %}
 
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button> -->
+
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-capitalize" id="ModalLabel"></h5>
+            <button type="button" class="btn-close btn" data-dismiss="modal" aria-label="Close">X</button>
+          </div>
+          <div class="modal-body" id="modelBody">
+          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -83,5 +109,17 @@
         }
     });  
     document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
+
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+    var modelbody = document.getElementById("modelBody");
+    var ModalLabel = document.getElementById("ModalLabel");
+    //myModal.show()
+    
+      "{% for message in messages  %}"
+            modelBody.innerText = "{{message}}"
+            ModalLabel.innerText = "{{message.tags}}"
+            myModal.show()
+            
+          "{% endfor %}"
     </script>
 </html>
