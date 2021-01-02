@@ -16,15 +16,15 @@
     <div class="container" >
         <div class="row">
             <div class="col-md-6 pt-5">
-                {% for i in '1234' %}
+                {% for data in write_data %}
                 <div class="pt-4">    
                     <div class="card media shadow card-body" style="border-radius: 20px;">
                         <div class="d-flex">
-                            <img src="/static/images/person.jpg" class="rounded-circle mr-3"    alt="" style="object-fit: cover;height: 3rem;width: 3rem; border: 3px solid rgba(0,0,0,.75); padding: 2px;">
-                            <h5 class="pt-2"> <b>John  Deo </b> </h5>
+                            <img src="{{data.image.url}}" class="rounded-circle mr-3"    alt="" style="object-fit: cover;height: 3rem;width: 3rem; border: 3px solid rgba(0,0,0,.75); padding: 2px;">
+                            <h5 class="pt-2"> <b>{{data.first_name}} {{data.last_name}} </b> </h5>
                           </div>
-                          <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quaerat debitis repudiandae, vel vitae quod magni. Voluptatem vitae, minus sequi totam error cumque mollitia magnam et, debitis deserunt praesentium reiciendis.</p>   
-                          <br>  <small class="text-muted"> 10-10-2020</small>
+                          <p class="pt-3">{{data.description}}</p>   
+                          <br>  <small class="text-muted"> {{data.date}}</small>
                         </div>
                 </div> 
                 {% endfor %}
@@ -34,7 +34,7 @@
             <div class="col-md-5 mx-auto pt-4">
                 <div class="card shadow " style="border-radius: 20px;">
                     <h4 class="text-center pt-4">Write here</h4>
-                    <form method="POST" class="p-4">
+                    <form method="POST" class="p-4" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">First Name </label>
                             <input type="text" name="first_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
@@ -44,16 +44,12 @@
                             <input type="text" name="last_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
                           </div>
                           <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"> Email </label>
-                            <input type="email" name="email" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
-                          </div>
-                          <div class="mb-3">
                             <label for="formFile" class="form-label">Place Image</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" name="image" type="file" id="formFile">
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control shadow-none" name="message" id="exampleFormControlTextarea1" rows="2"></textarea>
+                            <textarea class="form-control shadow-none" name="description" id="exampleFormControlTextarea1" rows="4"></textarea>
                           </div>
                           {%csrf_token%}
                           <div class="mb-3 mt-4">

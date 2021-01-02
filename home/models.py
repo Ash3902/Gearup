@@ -99,3 +99,20 @@ class Blog(models.Model):
     def __str__(self):
         return self.heading
 
+class Write_about_us(models.Model):
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20) 
+    date = models.DateTimeField(auto_now=True)
+    image = models.FileField(upload_to="write_us/")
+    description = models.TextField(max_length=500)
+    show = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.first_name
+    
+    @staticmethod
+    def write_us_get():
+        return Write_about_us.objects.all()
+    
+    class Meta:
+        ordering = ("-date",)

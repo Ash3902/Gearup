@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.core.files.storage import FileSystemStorage
 from .models import (
     Contact_us,
     Blog,
@@ -8,7 +9,8 @@ from .models import (
     Why_Choose_us,
     Our_client,
     Manage_service,
-    About_us
+    About_us,
+    Write_about_us
 )
 from django.views.generic import ListView
 from django.contrib import messages
@@ -66,5 +68,25 @@ def about_us(request):
 
 
 def write_for_us(request):
-    messages.success(request,'Your feedback is saved please do not submit again')
-    return render(request,'write-for-us.html')
+    
+    write_data = Write_about_us.objects.filter(show=True)
+    
+    if request.method == 'POST':
+        first_name =  request.POST['first_name']
+        last_name =  request.POST['last_name']
+        
+        image =  request.FILES['image']
+        description = request.POST['description']
+        messages.success(request,'Your feedback is saved please do not submit again')
+        fs = FileSystemStorage()
+        myfile = fs.save("write_us/" +image.name , image)
+        
+        # print(fs.url(myfile))
+
+        write_us = Write_about_us(first_name=first_name,last_name=last_name,image="write_us/" +image.name, description=description)
+        write_us.save()
+
+
+    return render(request,'write-for-us.html',{'write_data':write_data})
+
+

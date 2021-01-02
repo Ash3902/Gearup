@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from .models import Write_about_us
 class Home_section_2_card_inline(admin.TabularInline):
     model = Home_section_2_card
 class Home_setion_2_admin(admin.ModelAdmin):
@@ -57,6 +58,7 @@ admin.site.register(Our_client,Our_client_admin)
 admin.site.register(About_us,About_us_admin)
 admin.site.register(Contact_us)
 admin.site.register(Blog)
+admin.site.register(Write_about_us)
 
 
 admin.site.site_title = "GearUpLead"
