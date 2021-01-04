@@ -37,19 +37,19 @@
                     <form method="POST" class="p-4" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">First Name </label>
-                            <input type="text" name="first_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
+                            <input type="text" name="first_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="" required>
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label"> Last Name </label>
-                            <input type="text" name="last_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="">
+                            <input type="text" name="last_name" class="form-control p-3 shadow-none" id="exampleFormControlInput1" placeholder="" required>
                           </div>
                           <div class="mb-3">
                             <label for="formFile" class="form-label">Place Image</label>
-                            <input class="form-control" name="image" type="file" id="formFile">
+                            <input class="form-control" name="image" type="file" id="formFile" required>
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control shadow-none" name="description" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            <textarea class="form-control shadow-none" name="description" id="exampleFormControlTextarea1" rows="4" required></textarea>
                           </div>
                           {%csrf_token%}
                           <div class="mb-3 mt-4">
