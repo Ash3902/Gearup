@@ -31,43 +31,47 @@
 <section class="service">
     <div class="service_div">
         <div class="container pt-5">
-            <h1 class=" text-center text-light pt-5">Gear Up Lead Business Case Study </h1>
-            <p class="text-center pt-4" style="color: red;">Our Clints We Work</p>
-            <hr class="mx-auto" style="border-bottom: 4px solid red; width:5%;">
+            <h1 class=" text-center text-light pt-5 font-weight-bold">{{service}}</h1>
+            <h3 class="text-center pt-4 text-primary">{{service.sub_heading}}</h3>
+            <hr class="mx-auto" style="border-bottom: 4px solid rgb(226, 226, 226); width:5%;">
         </div>
     </div>
 </section>
+{%for ser in service.servicesection_set.all %}
+{%if forloop.counter|divisibleby:"2" %}
 <section class="" style="margin-top: 100px;"> 
     <div class="container">
         <div class="row">
             <div class="col-md-6 overflow-hidden">
-                <img class="w-100 h-100 grow overflow-hidden" src="/static/images/stock-market-courses-for-beginners.jpg" alt="">
+                <img class="w-100 h-100 grow overflow-hidden" src="{{ser.image.url}}" alt="">
             </div>
             <div class="col-md-6 p-5" style="margin-top: 20px;">
-                <h2>Software As A Service Companies</h2>
+                <h2>{{ser.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
-                <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dignissimos voluptates repudiandae a, dolore magni tempore facilis nesciunt autem placeat perspiciatis neque culpa officia, in asperiores, aspernatur possimus. Velit, unde!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eveniet temporibus qui est dolores consequatur ea minima perspiciatis accusamus. Molestias error earum nam quo omnis velit aperiam, rem excepturi labore!</p>
+                <p class="pt-4">{{ser.content|safe}}</p>
             </div>
         </div>
     </div>
 </section>
-
+{%else%}
 <section class="" style="margin-top: 100px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 p-5" style="margin-top: 20px;">
-                <h2>Software Companies </h2>
+                <h2>{{ser.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
-                <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dignissimos voluptates repudiandae a, dolore magni tempore facilis nesciunt autem placeat perspiciatis neque culpa officia, in asperiores, aspernatur possimus. Velit, unde!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eveniet temporibus qui est dolores consequatur ea minima perspiciatis accusamus. Molestias error earum nam quo omnis velit aperiam, rem excepturi labore!</p>
+                <p class="pt-4" style="text-align: justify;text-justify: inter-word !important;">
+                    {{ser.content|safe}}
+                </p>
             </div>
             <div class="col-md-6">
-                <img class="w-100 h-100" src="/static/images/stock-market-courses-for-beginners.jpg" alt="">
+                <img class="w-100 h-100" src="{{ser.image.url}}" alt="">
             </div>
         </div>
     </div>
 </section>
+{%endif%}
+{%endfor%}
 <section class="" style="margin-top: 100px;">
     <div class="container">
         <div class="row">

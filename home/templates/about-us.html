@@ -45,7 +45,9 @@
 <section class="about_us bg-primary">
     <div class="about_us_div">
         <div class="container pb-5">
-            <h1 class="text-center text-white" style="padding: 70px;" >{{about.title}} </h1>
+            <h1 class="text-center text-white font-weight-bold" style="padding-top: 90px;" >{{about.title}} </h1>
+            <hr class="mx-auto" style="border-bottom: 4px solid rgb(233, 233, 233); width:5%;">
+
         </div>
     </div>
 </section>
@@ -66,7 +68,7 @@
                 <h2>{{section.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
                 <p class="pt-3">
-                    <h5 class="" style="font-family: Times;" >{{section.description }} </h5>
+                    <h5 class="" style="font-family: sans-serif;text-align: ;" >{{section.description }} </h5>
                 </p>
                 <p class="pt-3">
                     <!-- <h5 class="" style="font-family: sans-serif;" >
@@ -110,6 +112,31 @@ An end to end lead generation company in the B2B space. The sole purpose of the 
 </section>
 {%endif%}
 {%endfor%}
+
+<section class="bg-primary card" style="margin-top:80px;background-image: url('{%static 'images/peoples.svg' %}');">
+    <div class="cantainer card-body text-center">
+
+        <h1 class="text-light mt-5 font-weight-bold">View Our Referral Partners program.</h1>
+        <button class="btn btn-light px-5 py-2 mt-3 mb-5 rounded-pill">
+            view
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+         </button>
+    </div>
+</section>
+<section class="card" style="background-color: rgb(218, 218, 218);">
+    <div class="cantainer card-body text-center">
+
+        <h1 class="text-light mt-5 font-weight-bold">View Our Referral Partners program.</h1>
+        <button class="btn btn-light px-5 py-2 mt-3 mb-5 rounded-pill">
+            view
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+         </button>
+    </div>
+</section>
 <section class="" style="padding-top: 100px;">
     <div class="container mt-5">
         <h2 style="font-family: sans-serif;" class=" text-center">Company Highlights</h2>

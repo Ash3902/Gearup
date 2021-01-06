@@ -20,14 +20,19 @@
                 <li class="nav-item pr-2">
                     <a class="nav-link" id="writeAboutNav" href="{% url 'write_for_us' %}">WRITE FOR US</a>
                 </li>
-                <li class="nav-item pr-2">
-                  <a class="nav-link" id="aboutNav" href="{% url 'about-us' %}">ABOUT US</a>
+                <li class="nav-item pr-2 dropdown">
+                  <button class="nav-link dropdown-toggle" id="aboutNav" href="{% url 'about-us' %}" role="button" data-toggle="dropdown" aria-expanded="false">ABOUT US</button>
+                  <ul class="dropdown-menu" aria-labelledby="aboutNav" role="menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
               </li>
               </ul>
               <ul class="navbar-nav p-2 ml-auto">
                 <li class="nav-item pr-2">
                   <div class="dropdown">
-                      <a href="{% url 'blog' %}" class="nav-link  dropdown-toggle" id="dropdownMenuButton" >
+                      <a href="{% url 'blog' %}" class="nav-link  dropdown-toggle" id="dropdMenuButton" >
                         BLOG
                       </a>
                     </div>
