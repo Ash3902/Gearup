@@ -15,6 +15,7 @@ from .models import (
 from django.views.generic import ListView
 from django.contrib import messages
 
+from careers.models import Career
 # Create your views here.
 def index(request):
     section1 = Home_section_1.objects.first()
@@ -92,7 +93,9 @@ def write_for_us(request):
 
 
 def job_opening(request):
-    return render(request,'job-opening.html')
+    return render(request,'job-opening.html',{
+        "careers": Career.objects.all()
+    })
 
 
 def referral_program(request):

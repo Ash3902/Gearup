@@ -29,30 +29,29 @@
 
 <section>
     <div class="container bg-light">
-        <h1 class=" text-center p-5">Available Openings at GearUpLead</h1>
+        <h1 class=" text-center py-5">Available Openings at GearUpLead</h1>
     </div>
 </section>
 
 <section class="mt-5">
     <div class="container">
-        {% for i in '1234' %}
+        {% for career in careers %}
           
             <div class="row">
                 <div class="col-md-6">    
-                    <p class="">
-                        <img width="40px" src="/static/images/cropped-bbbb-1.jpg" alt=""> Lead Generation Executive / HQL Executive</p>
+                    <p class="">{{career.heading}}</p>
                 </div>
                 <div class="col-md-3">
                     <p> 
-                        Nyati Eureka, Kharadi, Pune
+                        {{career.location}}
                     </p>
                 </div>
                 <div class="col-md-1">
                     <div class="dropdown">
-                        <button class="btn btn-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="{{career.apply_link}}" class="btn btn-primary" target="_next">
                           Apply
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        </a>
+                        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <form class="p-2" action="">
                             <div class="form-group pb-3">
                                 <label for="exampleInputEmail1">Full Name</label>
@@ -74,11 +73,11 @@
                             <button type="button" class="btn btn-primary btn-lg btn-block mt-4">Submit</button>
 
                           </form>
-                        </div>
+                        </div> -->
                       </div>
                 </div>
                 <div class="col-md-2">
-                    <p class=" text-success text-uppercase">Full TIme  </p><small>Posted 3 days ago</small>
+                    <p class=" text-primary text-uppercase">Full TIme  </p><small>{{career.job_posted}} </small>
                 </div>
                 
             </div>
