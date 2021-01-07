@@ -90,3 +90,10 @@ def write_for_us(request):
     return render(request,'write-for-us.html',{'write_data':write_data})
 
 
+
+def job_opening(request):
+    return render(request,'job-opening.html')
+
+
+def referral_program(request):
+    return render(request,'referral-program.html')

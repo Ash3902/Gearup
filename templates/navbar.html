@@ -30,12 +30,12 @@
                         <div class=" dropdown dropright">
                           <a class="dropdown-item dropdown-toggle" href="#">Career</a>
                           <div class="dropdown-menu" aria-labelledby="aboutNav">
-                            <a class="dropdown-item dropdown" href="#">Job Opportunities</a>
-                            <a class="dropdown-item" href="#">Referral Program</a>
+                            <a class="dropdown-item dropdown" href="{% url 'job_opening' %}">Job Opportunities</a>
+                            <a class="dropdown-item" href="{% url 'referral_program' %}">Referral Program</a>
                           </div>
                         </div>
                         
-                      <a class="dropdown-item" href="#">Who we are</a>
+                      <a class="dropdown-item" href="{% url 'about-us' %}">Who we are</a>
                     </div>
                   </div>
                 </li>
