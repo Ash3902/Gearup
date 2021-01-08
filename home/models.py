@@ -39,7 +39,7 @@ class Why_Choose_us(models.Model):
         return self.heading
 class Why_Choose_us_text(models.Model):
     us = models.ForeignKey(Why_Choose_us,on_delete=models.CASCADE)
-    text = models.CharField(max_length=90)
+    text = models.CharField(max_length=150)
     
 class Our_client(models.Model):
     heading = models.CharField(max_length=50)
