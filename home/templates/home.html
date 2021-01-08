@@ -6,7 +6,7 @@
 <style>
     .home_section
     {
-        background-image: url('/static/images/pexels-kaboompics-com-6224.jpg');
+        background-image: url('{%if section1.background_image %}{{section1.background_image.url}}{%else%}{%endif%}');
         background-size: cover;
         width: 100%;
         height: 85vh;
@@ -78,7 +78,7 @@
         content: ' ✓ ';
     }
     .grow { 
-    transition: all .5s ease-in-out; 
+    transition: all 1s ease-in-out; 
     }
 
     .grow:hover { 
@@ -112,50 +112,18 @@
 <section  >
     <div class="container">
         <h1 class="text-center p-5 mt-4" style="font-family: sans-serif;">
-            Accelerate Your Business With. </h1>
+            {{section2}}
+        </h1>
         <div class="row ">
-            <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/growth.png" width="60px" alt="">
-                </p>
-                <h4 class="pt-2">Growth</h4>
-                <p class="pt-3">
-                We resolve customer complaints quickly.
-                
-                We are provide real time customer services. 
-                
-               We are recommending new products or services based on customer interest or behavior.</p>
-            </div >
-            <div class="card col-md-3  p-3 text-center  showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/engagement.png" width="60px" alt="">
-                </p>
-                <h4 class="pt-2">Engagement</h4>
-                <p class="pt-3">High Quality.
-Flexible resources allocation.
-Predictable support.
-Handling future needs of the customer.</p>    
-            </div>
-      <div class="card col-md-3  p-3 text-center showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/accountability.png" width="70px" alt="">
-                </p>
-                <h4 class="pt-2">Accountability</h4>
-                <p class="pt-3">
-                Honesty and Integrity. Trust. Problem Solving and Technical Expertise. Ability to Change. Accept personal responsibility for tackling an issue. Tell us your requirement & let our experts find verified products for you.
-               </p>
-            </div>
-            <div class="card col-md-3  p-3 text-center showCard" style="border:none;" >
-                <p class="text-center">
-                    <img class="text-center" src="/static/images/result.png" width="70px" alt="">
-                </p>
-                <h4 class="pt-2">Results Driven</h4>
-                <p class="pt-3">We always pay attention to our shortcomings. For customers satisfaction. Top level management.
-Structure and roles.
-Embracing pressure.
-Deadline focused.
-Producing results.</p>
-            </div>
+            {% for sec in section2.home_section_2_card_set.all %} 
+                <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
+                    <p class="text-center">
+                        <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
+                    </p>
+                    <h4 class="pt-2">{{sec.title}}</h4>
+                    <p class="pt-3">{{sec.description}}</p>
+                </div >
+            {%endfor%}
         </div>
     </div>
     
@@ -166,52 +134,25 @@ Producing results.</p>
     <div class="container p-2">
         <h1  class="mt-3 text-center text-light">Our Services</h1>
         <div class="row my-5 " >
+            {% for ser in section3 %}
             <div class="col-md-4 our_section">
                 <div class="card mt-2">
-                <h4 class="text-center p-4" >Free</h4>
+                <h4 class="text-center p-4" >{{ser.service_name}}</h4>
                 <ul id="our-serivice-list">
-                    <li>B2B Lead Generation</li> <br>
-                    <li>B2B Database Management</li>
+                    {% for text in ser.service_text_set.all%}
+                        <li>{{text.text}}</li>
+                    {%endfor%}
+                    <!-- <li>B2B Lead Generation</li> <br>
                     <li>Demand Generation </li>
                     <li>Sales Qualified Leads (SQL)</li> 
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    
+                    <li>Marketing Qualified Leads (MQL)</li> -->
                 </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-primary btn-lg btn-block">Try for free</button></p>
+                <p class="text-center p-4"><button type="button" class="btn btn-primary btn-lg btn-block">{{ser.service_price_text}}</button></p>
                 </div>
             </div>
+            {%endfor%}
             <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-4 our_section">
-                <div class="card mt-2">
-                <h4 class="text-center p-4" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
-                    <path d="M5.354 5.119L7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.519.519 0 0 1-.146.05c-.341.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.171-.403.59.59 0 0 1 .084-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027c.08 0 .16.018.232.056l3.686 1.894-.694-3.957a.564.564 0 0 1 .163-.505l2.906-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.002 2.223 8 2.226v9.8z"/>
-                  </svg>Primium</h4>
-                <ul id="our-serivice-list">
-                    <li>₹100/month</li>
-                    <li>Include all free service</li> <br>
-                    <li>B2B Lead Generation</li>
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    <li>Sales Qualified Leads (SQL)</li>
-                    <li>BANT Qualified Leads (BANT)</li>
-                    <li>Account Based Marketing</li>
-                </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-success btn-lg btn-block">Try it primium</button></p>
-            </div></div>
-            <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-4 our_section">
-                <div class="card mt-2">
-                <h4 class="text-center p-4" >Businees</h4>
-                <ul id="our-serivice-list">
-                    <li>B2B Database Management</li>
-                    <li>Sales Qualified Leads (SQL)</li> <br>
-                    <li>B2B Lead Generation</li>
-                    <li>Marketing Qualified Leads (MQL)</li>
-                    <li>Sales Qualified Leads (SQL)</li>
-                    <li>BANT Qualified Leads (BANT)</li>
-                    <li>Account Based Marketing</li>
-                </ul>
-                <p class="text-center p-4"><button type="button" class="btn btn-dark btn-lg btn-block">Try for free</button></p>
-            </div></div>
+            
         </div>
     </div>
 </section>
@@ -226,17 +167,19 @@ Producing results.</p>
         </div>
         <div class="col-1"></div>
         <div class="col-md-5">
-            <h1 class="mb-5"> <b>Helping You To Grow Your Business</b> </h1>
+            <h1 class="mb-5"> <b>{{section4.heading }}</b> </h1>
             
-            <h5 class="my-4">We help you with all four steps of getting new business customers:</h5>
+            <h5 class="my-4">{{section4.sub_heading}}</h5>
             <ol>
-                <li>Finding businesses who might need your products and services.</li>
-                <li>Contacting those businesses.</li>
+                {% for text in section4.why_choose_us_text_set.all %}
+                <li>{{text.text}}</li>
+                {%endfor%}
+                <!-- <li>Finding businesses who might need your products and services.</li>
                 <li>Finding out how likely those businesses are to buy from you.</li>
-                <li>Closing sales.</li>
+                <li>Closing sales.</li> -->
             </ol>
             <div>
-                <a href="#" class="btn btn-outline-primary rounded-pill btn-lg my-4">Load More </a>
+                <a href="{{section4.url}}" class="btn btn-outline-primary rounded-pill btn-lg my-4">Load More </a>
             </div>
         </div>
     </div>
@@ -244,16 +187,19 @@ Producing results.</p>
 
 <section class="mb-5" style="width: 100%;background-color:rgb(216, 216, 216); ">
     <div class="container mb-5">
-        <h1 class="text-center pt-5">Our Clients</h1>
+        <h1 class="text-center pt-5">{{section5.heading}}</h1>
         <div class="row pb-5 pt-4">
+            <!-- <b class=" text-center ">Google</b> -->
+            {%for client in section5.client_detail_set.all %}
             <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
-                <!-- <b class=" text-center ">Google</b> -->
-                <img src="http://llvm.org/devmtg/2015-10/logos/Microsoft-logo_rgb_c-gray.png" alt="" width="100%" height="100%" style="object-fit: cover;">
+                <img src="{{client.client_image.url}}" alt="" width="100%" height="100%" style="object-fit: cover;">
+                <!-- <img src="http://llvm.org/devmtg/2015-10/logos/Microsoft-logo_rgb_c-gray.png" alt="" width="100%" height="100%" style="object-fit: cover;"> -->
             </div>
-            <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
-                <!-- <b class=" text-center ">Google</b> -->
+                {%endfor%}
+            <!-- <b class=" text-center ">Google</b> -->
+            <!-- <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
                 <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49947510-0686-4cad-b5c8-e5ee95492c91/d98chn1-5c099699-2816-4088-a031-d0558ffdb48b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi80OTk0NzUxMC0wNjg2LTRjYWQtYjVjOC1lNWVlOTU0OTJjOTEvZDk4Y2huMS01YzA5OTY5OS0yODE2LTQwODgtYTAzMS1kMDU1OGZmZGI0OGIucG5nIn1dXX0.uObOMFwdh5C_kUPAfizm9KVzBQZgQ4Yr1aaK4cDHcuE" alt="" width="100%" height="100%" style="object-fit:contain">
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -261,19 +207,21 @@ Producing results.</p>
     <div class="container mt-5" style="width: 100%;">
         <div class="row mt-5">
             <div class="col-md-6">
-                <a class="text-decoration-none pt-5" href="#"><h1>Businesses We Serve</h1></a>
-                <h4 class="mt-5 text-dark">The businesses we serve include: </h4>
+                <a class="text-decoration-none pt-5" href="#"><h1>{{section6.heading}}</h1></a>
+                <h4 class="mt-5 text-dark">{{section6.sub_heading}}</h4>
                 <ul class="mt-4">
-                    <li>Software As A Service Companies</li>
+                    {%for text in section6.home_section_last_text_set.all %}
+                    <li> {{text.text}} </li>
+                    {%endfor%}
+                    <!-- <li>Software As A Service Companies</li>
                     <li>Software Companies </li>
-                    <!-- <li>IT Companies </li> -->
                     <li>Startups</li>
                     <li>Real Estate Businesses </li>
-                    <li>Education</li>
+                    <li>Education</li> -->
                 </ul>
             </div>
             <div class="col-md-6 overflow-hidden p-0" >
-                <img src="/static/images/pexels-nataliya-vaitkevich-6120217.jpg" class="grow" width="100%" height="100%" alt="">
+                <img src="{{section6.image.url}}" class="grow" width="100%" height="100%" alt="">
             </div>
         </div>
     </div>

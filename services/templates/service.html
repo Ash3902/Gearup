@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Gear Up Lead | Home{% endblock title %}
+{% block navID %}serviceNav{% endblock navID %}
+{% block style %}
+    <style>
+        .service
+        {
+            background-image: url('/static/images/bulding.jpg');
+            width: 100%;
+            height: 50vh;
+            background-attachment: fixed;
+        }
+        .service_div
+        {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .grow { 
+            transition: all .5s ease-in-out; 
+            }
+        
+        .grow:hover { 
+            transform: scale(1.2); 
+            }
+    </style>
+{% endblock style %}
+{% block content %}
+
+<section class="service">
+    <div class="service_div">
+        <div class="container pt-5">
+            <h1 class=" text-center text-light pt-5 font-weight-bold">{{service}}</h1>
+            <h3 class="text-center pt-4 text-primary">{{service.sub_heading}}</h3>
+            <hr class="mx-auto" style="border-bottom: 4px solid rgb(226, 226, 226); width:5%;">
+        </div>
+    </div>
+</section>
+{%for ser in service.servicesection_set.all %}
+{%if forloop.counter|divisibleby:"2" %}
+<section class="" style="margin-top: 100px;"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 overflow-hidden">
+                <img class="w-100 h-100 grow overflow-hidden" src="{{ser.image.url}}" alt="">
+            </div>
+            <div class="col-md-6 p-5" style="margin-top: 20px;">
+                <h2>{{ser.heading}}</h2>
+                <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
+                <p class="pt-4">{{ser.content|safe}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{%else%}
+<section class="" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-5" style="margin-top: 20px;">
+                <h2>{{ser.heading}}</h2>
+                <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
+                <p class="pt-4" style="text-align: justify;text-justify: inter-word !important;">
+                    {{ser.content|safe}}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img class="w-100 h-100" src="{{ser.image.url}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{%endif%}
+{%endfor%}
+
+<section class="pt-5">
+    <div class="container bg-light">
+        <h1 class="text-center text-info" style="padding-top: 100px;">Compnies We Can Hepl Us</h1>
+        <hr class="mx-auto mt-4" style="border-bottom: 4px solid rgb(20, 161, 0); width:10%">
+        <div class="row p-5 mx-auto">
+            {% for i in '123456' %}
+            <div class="col-md-2 bg-white shadow m-5">
+                <div class="">
+                    <p class="p-5 text-center">Google</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

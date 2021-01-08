@@ -1,5 +1,4 @@
 {% load static %}
-
 <nav class="navbar navbar-expand-lg text-white navbar-light bg-white ">
       <div class="container">
           <a class="navbar-brand" href="/">
@@ -15,25 +14,42 @@
                       <a class="nav-link "  id="homeNav" href="/">HOME</a>
                   </li>
                   <li class="nav-item pr-2">
-                    <a class="nav-link" id="coreNav" href="#home">SERVICES</a>
+                    <a class="nav-link" id="serviceNav" href="{% url 'services' %}">SERVICES</a>
                 </li>
                 <li class="nav-item pr-2">
-                    <a class="nav-link" id="busNav" href="#home">WRITE FOR US</a>
+                    <a class="nav-link" id="writeAboutNav" href="{% url 'write_for_us' %}">WRITE FOR US</a>
                 </li>
-                <li class="nav-item pr-2">
-                  <a class="nav-link" id="aboutNav" href="{% url 'about-us' %}">ABOUT US</a>
-              </li>
+                
+                <li class="nav-item pr-2 dropdown">
+                  <div class="dropdown">
+                    
+                    <a class="nav-link dropdown-toggle" id="aboutNav" href="{% url 'about-us' %}">About US</a>
+                  
+                    <div class="dropdown-menu bg-light" aria-labelledby="aboutNav">
+                      
+                        <div class=" dropdown dropright">
+                          <a class="dropdown-item dropdown-toggle" href="#">Career</a>
+                          <div class="dropdown-menu" aria-labelledby="aboutNav">
+                            <a class="dropdown-item dropdown" href="{% url 'job_opening' %}">Job Opportunities</a>
+                            <a class="dropdown-item" href="{% url 'referral_program' %}">Referral Program</a>
+                          </div>
+                        </div>
+                        
+                      <a class="dropdown-item" href="{% url 'about-us' %}">Who we are</a>
+                    </div>
+                  </div>
+                </li>
               </ul>
               <ul class="navbar-nav p-2 ml-auto">
                 <li class="nav-item pr-2">
                   <div class="dropdown">
-                      <a href="{% url 'blog' %}" class="nav-link  dropdown-toggle" id="dropdownMenuButton" >
+                      <a href="{% url 'blog' %}" class="nav-link  dropdown-toggle" id="dropdMenuButton" >
                         BLOG
                       </a>
                     </div>
                   </li>
                 <li class="nav-item bg-primary rounded-pill pr-2">
-                    <a class="nav-link text-light pl-2" id="contactNav" target="_" href="{% url 'contact-us' %}">CONTACT US</a>
+                    <a class="nav-link text-light pl-2" id="contactNav" href="{% url 'contact-us' %}">CONTACT US</a>
                 </li>
               </ul>
           </div>

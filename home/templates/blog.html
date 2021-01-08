@@ -31,7 +31,7 @@
                             </svg>
                             
                             <h5 class="card-title pt-4 text-dark">{{blog.heading}}</h5>
-                            <p class="card-text text-dark">{{blog.description|safe|truncatewords:20}}</p>
+                            <p class="card-text text-dark">{{blog.description|safe|striptags|truncatewords:20}}</p>
                             <p>
                                 <small>{{blog.author_name}} {{blog.date}}</small>
                             </p>
@@ -47,8 +47,8 @@
 <section class="pt-5">
     <div class="container">
         <div class="row mt-5">
-            <div class="col-md-4 mx-auto">
-                <h2 class="ml-lg-3" >More posts</h2>
+            <h2 class="ml-lg-3" >More posts</h2>
+            <!-- <div class="col-md-4 mx-auto">
                 <hr class="w-50" style="border-bottom: 4px solid rgba(0,0,0,1);">
                 <div class="row m-lg-5">
                     <div class="col-md-11">
@@ -60,14 +60,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-md-8 mx-auto">
                 {% for blog in object_list %} 
-                <div class="card mt-4 bg-light p-3 shadow" >
+                <div class="card mt-4 bg-light p-3 " >
                     <a class=" text-decoration-none" href="{% url 'blog-detail' blog.id blog.slug %}">
                         <div class="card-body">  
                             <h5 class="card-title text-dark">{{blog.heading}}</h5>
-                            <p class="card-text text-dark">{{blog.description|safe|truncatewords:50}}</p>
+                            <p class="card-text text-dark">{{blog.description|safe|striptags|truncatewords:50}}</p>
                             <p>
                                 <small>{{blog.author_name}} {{blog.date}}</small>
                             </p>
