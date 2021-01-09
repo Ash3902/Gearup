@@ -4,7 +4,7 @@ from tinymce.models import HTMLField
 class Service(models.Model):
     heading = models.CharField(max_length=100)
     sub_heading = models.CharField(max_length=100)
-
+    is_core = models.BooleanField(default=False)
     def __str__(self):
         return self.heading
 

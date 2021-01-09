@@ -21,32 +21,32 @@
         {
             0%
             {
-                content: 'Awesome';
+                content: 'Accomplished For';
                 color: yellow;
             }
             20%
             {
-                content: 'Programmer';
+                content: ' Growth';
                 color: yellow;
             }
             40%
             {
-                content: 'Developer';
+                content: 'Engagement';
                 color: yellow;
             }
             60%
             {
-                content: 'Designer';
+                content: 'Accountability';
                 color: yellow;
             }
             80%
             {
-                content: 'Creative';
+                content: 'Results';
                 color: yellow;
             }
             100%
             {
-                content: 'Amazing';
+                content: 'Driven';
                 color: yellow;
             }
         }
@@ -205,6 +205,40 @@
         </div>
     </div>
 </section>
+
+<style>
+    .porinter{
+        cursor: pointer;
+    }
+</style>
+<section class="mt-5 book_section">
+    <div class="container col-md-8">
+        <h1 class="text-center text-primary p-5">F A Q</h1>
+        <div class="accordion" id="accordionExample">
+            {% for faq in faqs %}
+            <div class="porinter">
+              <div class="" id="heading{{forloop.counter}}">
+                <h4 class="mb-0 ml-4">
+                  <span class=" text-left "  data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                      {{faq.question}}
+                      <svg class=" float-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </span>
+                </h4>
+            </div>
+            <div id="collapse{{forloop.counter}}" class="collapse " aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                <div class="card-body" >
+                    <p>{{faq.answer}}</p>
+                </div>
+              </div>
+            </div>
+            <hr style="border-bottom: 3px solid rgb(0, 102, 255);">
+            {%endfor%}
+          </div>        
+    </div>
+</section>
+
 
 
 {% endblock content %}

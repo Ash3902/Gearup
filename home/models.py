@@ -77,7 +77,7 @@ class About_us(models.Model):
 class About_us_section(models.Model):
     parent = models.ForeignKey(About_us,on_delete=models.CASCADE)
     heading = models.CharField(max_length=50)
-    description = models.TextField()
+    description = HTMLField()
     image = models.FileField(upload_to="about/")
 
 
@@ -116,3 +116,10 @@ class Write_about_us(models.Model):
     
     class Meta:
         ordering = ("-date",)
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=100)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question

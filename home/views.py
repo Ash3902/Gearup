@@ -10,7 +10,8 @@ from .models import (
     Our_client,
     Manage_service,
     About_us,
-    Write_about_us
+    Write_about_us,
+    FAQ
 )
 from django.views.generic import ListView
 from django.contrib import messages
@@ -24,6 +25,7 @@ def index(request):
     section4 = Why_Choose_us.objects.first()
     section5 = Our_client.objects.first()
     section6 = Home_section_last.objects.first()
+    faqs = FAQ.objects.all()
     # print(section1.heading)
     return render(request,"home.html",{
         "section1" : section1,
@@ -32,6 +34,7 @@ def index(request):
         "section4" : section4,
         "section5" : section5,
         "section6" : section6,
+        "faqs" : faqs,
     })
 
 class BlogList(ListView):

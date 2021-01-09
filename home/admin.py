@@ -48,6 +48,7 @@ class About_us_admin(admin.ModelAdmin):
         About_us_section_text
     ]
 #######################################
+
 # Register your models here.
 admin.site.register(Home_section_1)
 admin.site.register(Home_section_2,Home_setion_2_admin)
@@ -59,6 +60,7 @@ admin.site.register(About_us,About_us_admin)
 admin.site.register(Contact_us)
 admin.site.register(Blog)
 admin.site.register(Write_about_us)
+admin.site.register(FAQ)
 
 
 admin.site.site_title = "GearUpLead"
