@@ -19,13 +19,16 @@
 <section class="" style="margin-top: 100px;"> 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 overflow-hidden">
-                <img class="w-100 h-100 grow overflow-hidden" src="{{ser.image.url}}" alt="">
+            <div class="col-md-4 overflow-hidden">
+                <img class="w-100 h-100 overflow-hidden" src="{{ser.image.url}}" alt="" style= "object-fit:cover;">  
             </div>
-            <div class="col-md-6 p-5" style="margin-top: 20px;">
-                <h2>{{ser.heading}}</h2>
-                <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
-                <p class="pt-4">{{ser.content|safe}}</p>
+            <div class="col-md-7 d-flex justify-content-around p-5" style="margin-top: 20px;">
+                <div>
+                    <h2>{{ser.heading}}</h2>
+                    <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
+                    <p class="pt-4">{{ser.content|safe}}</p>
+                </div>
+                <div></div>
             </div>
         </div>
     </div>
@@ -34,15 +37,15 @@
 <section class="" style="margin-top: 100px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 p-5" style="margin-top: 20px;">
+            <div class="col-md-7 p-5" style="margin-top: 20px;">
                 <h2>{{ser.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
                 <p class="pt-4" style="text-align: justify;text-justify: inter-word !important;">
                     {{ser.content|safe}}
                 </p>
             </div>
-            <div class="col-md-6">
-                <img class="w-100 h-50" src="{{ser.image.url}}" alt="">
+            <div class="col-md-4">
+                <img class="w-100 h-100" src="{{ser.image.url}}" alt="" style="object-fit:cover">
             </div>
         </div>
     </div>
