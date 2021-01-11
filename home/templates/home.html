@@ -93,6 +93,11 @@
         transform: scale(1.1);
         box-shadow: rgba(0,0,0,0);
     }
+    #more
+    {
+        display: none;
+        cursor: pointer;
+    }
 </style> 
     {% endblock style %}
     {% block content %}
@@ -116,12 +121,19 @@
         </h1>
         <div class="row ">
             {% for sec in section2.home_section_2_card_set.all %} 
-                <div class="card col-md-3  p-4 text-center showCard" style="border:none;">
+                <div class="card col-md-3 mt-5 mx-auto p-2 text-center showCard" style="border:none;">
                     <p class="text-center">
                         <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
                     </p>
                     <h4 class="pt-2">{{sec.title}}</h4>
-                    <p class="pt-3">{{sec.description}}</p>
+                    <!-- <p>{{sec.description}}</p> -->
+                    <p class="pt-3">
+                        <span style="display: inline;" id="less-{{forloop.counter}}">{{sec.description|safe|striptags|truncatechars:100}}</span>
+                        <span style="display: inline;" id="dots-{{forloop.counter}}">...</span>
+                        <span style="display: none;" id="more-{{forloop.counter}}">{{sec.description|safe}}</span>
+                        <!-- <small id="read" onclick="read()">read more</small> -->
+                    </p>
+                    <p class=""><button type="button" id="read-{{forloop.counter}}" onclick="read('{{forloop.counter}}')" class="btn btn-outline-primary rounded-pill my-4">read more </button></p>
                 </div >
             {%endfor%}
         </div>
@@ -242,3 +254,5 @@
 
 
 {% endblock content %}
+
+    

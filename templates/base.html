@@ -135,5 +135,30 @@
             myModal.show()
             
           "{% endfor %}"
+
+
+        
+            var i = 0;
+            function read(id){
+                
+              console.log(id)  
+              if(!i){
+                    document.getElementById(`more-${id}`).style.display="inline";
+                    document.getElementById(`dots-${id}`).style.display="none";
+                    document.getElementById(`less-${id}`).style.display="none";
+                    document.getElementById(`read-${id}`).innerHTML="read less";
+                    i=1;
+                }
+                else{
+                    document.getElementById(`more-${id}`).style.display="none";
+                    document.getElementById(`dots-${id}`).style.display="inline";
+                    document.getElementById(`less-${id}`).style.display="inline";
+                    document.getElementById(`read-${id}`).innerHTML="read more";
+                    i=0;
+                }
+            }
+        
+        
+
     </script>
 </html>
