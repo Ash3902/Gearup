@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 overflow-hidden">
-                <img class="w-100 h-100 overflow-hidden" src="{{ser.image.url}}" alt="" style= "object-fit:cover;">  
+                <img class=" img-responsive img-thumbnail w-100 h-100" src="{{ser.image.url}}" alt="" >  
             </div>
             <div class="col-md-7 d-flex justify-content-around p-5" style="margin-top: 20px;">
                 <div>
@@ -45,7 +45,7 @@
                 </p>
             </div>
             <div class="col-md-4">
-                <img class="w-100 h-100" src="{{ser.image.url}}" alt="" style="object-fit:cover">
+                <img class="img-responsive img-thumbnail w-100 h-100" src="{{ser.image.url}}" alt="" >
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
         <div class="row pb-5 pt-4">
             {%for client in section5.client_detail_set.all %}
             <div class="col-md-2 card shadow mt-3 mr-3 py-5"> 
-                <img src="{{client.client_image.url}}" alt="" width="100%" height="100%" style="object-fit: cover;">
+                <img class="img-responsive img-thumbnail w-100 h-100" src="{{client.client_image.url}}" alt="">
             </div>
                 {%endfor%}
         </div>

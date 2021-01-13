@@ -15,17 +15,6 @@
     });  
     document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
 
-    var myModal = new bootstrap.Modal(document.getElementById('myModal'))
-    var modelbody = document.getElementById("modelBody");
-    var ModalLabel = document.getElementById("ModalLabel");
-    //myModal.show()
-    
-      "{% for message in messages  %}"
-            modelBody.innerText = "{{message}}"
-            ModalLabel.innerText = "{{message.tags}}"
-            myModal.show()
-            
-          "{% endfor %}"
 
 
         

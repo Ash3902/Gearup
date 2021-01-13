@@ -140,9 +140,6 @@ transform: scale(1.2);
             }
             #textSubHeader{font-size:30px;}
         }
-    .showCard{
-        border-radius: 20px !important;
-    }
     .showCard:hover{
         background-color: rgb(224, 224, 224);
     }

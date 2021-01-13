@@ -23,21 +23,23 @@
         <h1 class="text-center p-5 mt-4" style="font-family: sans-serif;">
             {{section2}}
         </h1>
-        <div class="row ">
+        <div class="row">
             {% for sec in section2.home_section_2_card_set.all %} 
-                <div class="card col-md-3 mt-5 mx-auto p-2 text-center showCard" style="border:none;">
+                <div class="col-md-6 mt-2 mx-auto pl-2 pt-2">
+                    <div class="card shadow p-4 text-center showCard ">
                     <p class="text-center">
-                        <img class="text-center" src="{{sec.image.url}}" width="60px" alt="">
+                        <img class="text-center rounded-circle" src="{{sec.image.url}}" style="object-fit: cover;height: 5rem;width: 5rem; padding: 2px;" alt="">
                     </p>
-                    <h4 class="pt-2">{{sec.title}}</h4>
-                    <!-- <p>{{sec.description}}</p> -->
-                    <p class="pt-3">
+                    <h4 class="pt-3">{{sec.title}}</h4>
+                    <p class="pt-2">{{sec.description}}</p>
+                </div>
+                    <!-- <p class="pt-3">
                         <span style="display: inline;" id="less-{{forloop.counter}}">{{sec.description|safe|striptags|truncatechars:100}}</span>
                         <span style="display: inline;" id="dots-{{forloop.counter}}">...</span>
                         <span style="display: none;" id="more-{{forloop.counter}}">{{sec.description|safe}}</span>
-                        <!-- <small id="read" onclick="read()">read more</small> -->
+                        <small id="read" onclick="read()">read more</small>
                     </p>
-                    <p class=""><button type="button" id="read-{{forloop.counter}}" onclick="read('{{forloop.counter}}')" class="btn btn-outline-primary rounded-pill my-4">read more </button></p>
+                    <p class=""><button type="button" id="read-{{forloop.counter}}" onclick="read('{{forloop.counter}}')" class="btn btn-outline-primary rounded-pill my-4">read more </button></p> -->
                 </div >
             {%endfor%}
         </div>

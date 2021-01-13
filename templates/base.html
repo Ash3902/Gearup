@@ -66,6 +66,20 @@
     {% include "footer.html" %}
     <script src="{% static 'js/bootstrapJS.5.0-js.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+      var modelbody = document.getElementById("modelBody");
+      var ModalLabel = document.getElementById("ModalLabel");
+      //myModal.show()
+      
+        "{% for message in messages  %}"
+              modelBody.innerText = "{{message}}"
+              ModalLabel.innerText = "{{message.tags}}"
+              myModal.show()
+              
+            "{% endfor %}"
+  
+    </script>
   </body>
   
 </html>

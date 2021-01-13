@@ -61,6 +61,7 @@ def contact(request):
         message = request.POST["message"]
         print(type(number))
         Contact_us.objects.create(name=name,email=email,number=number,message=message).save()
+        messages.success(request,'Your message is saved please do not submit again withen 24 hour contact you !')
         return redirect("contact-us")
     return render(request,"contact-us.html")
 
