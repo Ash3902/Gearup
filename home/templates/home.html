@@ -19,19 +19,24 @@
     </div>
 </section>
 <section  >
-    <div class="container">
+    <div class="m-3">
         <h1 class="text-center p-5 mt-4" style="font-family: sans-serif;">
             {{section2}}
         </h1>
         <div class="row">
             {% for sec in section2.home_section_2_card_set.all %} 
                 <div class="col-md-6 mt-2 mx-auto pl-2 pt-2">
-                    <div class="card shadow p-4 text-center showCard ">
+                    <div class="card shadow p-4 showCard">
+                   
+                    <i class="fa fa-quote-left" style="font-size:15px;color:width"></i>
+                    
                     <p class="text-center">
-                        <img class="text-center rounded-circle" src="{{sec.image.url}}" style="object-fit: cover;height: 5rem;width: 5rem; padding: 2px;" alt="">
+                        <img class="text-center rounded-circle" src="{{sec.image.url}}" style="object-fit: cover;height: 4rem;width: 4rem; padding: 2px;" alt="">
                     </p>
-                    <h4 class="pt-3">{{sec.title}}</h4>
-                    <p class="pt-2">{{sec.description}}</p>
+                    <h6 class="pt-2 text-center">{{sec.title}}</h6>
+                    <small class="pt-2 text-center">{{sec.description}}</small>
+                    <span><i class="fa fa-quote-right float-right" style="font-size:15px;color:width"></i></span>
+                    
                 </div>
                     <!-- <p class="pt-3">
                         <span style="display: inline;" id="less-{{forloop.counter}}">{{sec.description|safe|striptags|truncatechars:100}}</span>
