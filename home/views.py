@@ -90,7 +90,7 @@ def write_for_us(request):
 
         write_us = Write_about_us(first_name=first_name,last_name=last_name,image="write_us/" +image.name, description=description)
         write_us.save()
-
+        return redirect("write_for_us")
 
     return render(request,'write-for-us.html',{'write_data':write_data})
 

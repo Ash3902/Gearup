@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Gear Up Lead | Home{% endblock title %}
+{% block title %} Generate leads free | GearUplead{% endblock title %}
 {% block navID %}homeNav{% endblock navID %}
 {% block style %} 
 {% endblock style %}
@@ -11,8 +11,8 @@
             <h1 class="text-white" style="padding-top: 150px;" id="textHeader" >{{section1.heading}}</h1>
             <p class="text-white pt-4" id="textSubHeader" >{{section1.sub_heading}} <span1></span1></p>
             <div class="text-left mt-5">
-                <a href="" class="btn btn-primary rounded-pill btn-lg mr-2 mt-3">Get Start Today</a>
-                <a href="" class="btn btn-outline-light rounded-pill btn-lg mt-3">Know more</a>
+                <a href="{%url 'contact-us' %}" class="btn btn-primary rounded-pill btn-lg mr-2 mt-3">Get Start Today</a>
+                <a href="{%url 'services' %}" class="btn btn-outline-light rounded-pill btn-lg mt-3">Know more</a>
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Gear Up Lead | About Us{% endblock title %}
+{% block title %}GearUpLead | About Us {% endblock title %}
 {% block navID %}aboutNav{% endblock navID %}
 {% block style %}
 {% endblock style %}
@@ -20,7 +20,7 @@
 {%if forloop.counter|divisibleby:"2" %}
 <section>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-5 justify-content-center">
             <div class="col-md-6">
                 <div class="parent_div">
                     <div class="child_div">
@@ -50,7 +50,7 @@ An end to end lead generation company in the B2B space. The sole purpose of the 
 {%else%}
 <section class="" style="padding-top: 100px;">
     <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-5 justify-content-center">
             <div class="col-md-6">
                 <h2>{{section.heading}}</h2>
                 <hr class="w-25" style="border-bottom: 4px solid rgb(20, 161, 255);">
