@@ -44,7 +44,7 @@
                 <p class="text-capitalize" style="color: #6e6e6e;font-size:18px;">GearUpLead has been the best in class in providing the Lead Relation ship services for tech companies
                 </p>
             </div>
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-lg-5">
                 <form class=" shadow" action="" method="POST">{% csrf_token %}
                     <div class="p-5">
                         <h4 style="color: #2e4862; font-size:30px;">Let’s Discuss More About Your Business Needs!</h4>
@@ -86,7 +86,7 @@
                           </div>
                           <div  class="form-group pt-3">
                             <label style="color: #2e4862; font-size:18px;" for="exampleFormControlTextarea1"> <b> Tell us more about your needs: </b></label>
-                            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                            <textarea class="form-control shadow-none" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
                           </div>
                           <p class="pt-4">
                               <button type="submit" class="btn btn-success btn-lg btn-block">Book a trial</button>
@@ -218,9 +218,9 @@
 </style>
 <section class="mt-5 book_section">
     <div class="container col-md-8">
-        <h1 class="text-center text-primary p-5">F A Q</h1>
+        <h1 class="text-center p-5" style="color: #2e4862;">F A Q</h1>
         <div class="accordion" id="accordionExample">
-            {% for faq in faqs %}
+            {% for faq in faqs %}   
             <div class="porinter">
               <div class="" id="heading{{forloop.counter}}">
                 <h4 class="mb-0 ml-4">
