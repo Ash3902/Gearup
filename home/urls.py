@@ -2,7 +2,7 @@ from django.urls import path,include
 from django.views.generic import TemplateView
 from . import views
 urlpatterns = [
-    path("",views.index),
+    path("",views.index,name='home'),
     path("contact-us",views.contact,name="contact-us"),
     path("about-us",views.about_us,name="about-us"),
     path("blog",views.BlogList.as_view(),name="blog"),

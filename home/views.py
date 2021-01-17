@@ -11,7 +11,8 @@ from .models import (
     Manage_service,
     About_us,
     Write_about_us,
-    FAQ
+    FAQ,
+    Home_Contact_Booking
 )
 from django.views.generic import ListView
 from django.contrib import messages
@@ -27,6 +28,22 @@ def index(request):
     section6 = Home_section_last.objects.first()
     faqs = FAQ.objects.all()
     # print(section1.heading)
+
+    
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        number = request.POST["number"]
+        message = request.POST["message"]
+        print(type(number))
+        Home_Contact_Booking.objects.create(name=name,email=email,number=number,message=message).save()
+        messages.success(request,'Your message is saved please do not submit again withen 24 hour Our Company Contact You !')
+        return redirect("home")
+
+
+
+
+
     return render(request,"home.html",{
         "section1" : section1,
         "section2" : section2,

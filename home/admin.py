@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 from .models import Write_about_us
+from .models import Home_Contact_Booking
 class Home_section_2_card_inline(admin.TabularInline):
     model = Home_section_2_card
 class Home_setion_2_admin(admin.ModelAdmin):
@@ -50,6 +51,7 @@ class About_us_admin(admin.ModelAdmin):
 #######################################
 
 # Register your models here.
+admin.site.register(Home_Contact_Booking)
 admin.site.register(Home_section_1)
 admin.site.register(Home_section_2,Home_setion_2_admin)
 admin.site.register(Home_section_last,Home_section_last_admin)
