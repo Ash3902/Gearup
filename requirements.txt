@@ -1,1 +1,2 @@
-django==2.2
+Django==2.1
+django-tinymce4-lite

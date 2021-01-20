@@ -1,0 +1,215 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{%static 'css/roi.css'%}">
+</head>
+<main>
+	
+    
+    <section class="roi-calc-sectn" id="find-roi">
+        
+        
+        <div class="wrapper">
+            
+            <div class="calc-otr">
+                
+                <div class="heading-cntnr">
+                    <h3>INBOUND MARKETING ROI CACULATOR</h3>
+    
+                    <p>We’ve made it easy for you to visualize the results of inbound marketing campaigns.Just enter your information in the fields below and let the calculator do the fancy math.  </p>
+    </div>
+    
+    <div class="calc-cntnr">
+        
+    
+        
+        
+        
+        <div class="calc-left">
+        
+            
+    
+            <div class="input-holder">
+                <input class="inputMaterial" type="text" id="monthly-visitors" required name="input-one" autocomplete="off">
+                <label class="labels">Average Monthly Website Visitors</label>
+                
+            </div>
+            
+            
+            
+    <div class="input-holder">
+        <input class="inputMaterial" type="text" id="monthly-leads" required name="input-one" autocomplete="off">
+        <label>Average Number of Leads Per Month</label>
+        
+    </div>
+    
+    
+    
+    <div class="input-holder">
+        <input class="inputMaterial" type="text" id="qualified-leads" required name="input-one" autocomplete="off">
+        <label>Percent of Leads That Are Qualified (%)</label>
+        
+    </div>
+    
+    
+    
+    <div class="input-holder">
+        <input class="inputMaterial" type="text" id="closed-leads" required name="input-one" autocomplete="off">
+        <label>Percent of Leads That Close (%)</label>
+        
+    </div>
+    
+    
+    
+    <div class="input-holder">
+        <input class="inputMaterial" type="text" id="customer-val" required name="input-one" autocomplete="off">
+        <label>Customer Lifetime Value ($)</label>
+        
+    </div>
+    
+    <div>  <div class="btn-lg btn-primary btn" onclick="compute();" id="popup-btn"> Calculate </div>  </div>     
+    
+</div>
+    
+
+
+
+
+<div class="calc-right">
+    
+    <div class="res-box">  <span class="res-value"> <span class="conv-rate">0 </span> %  </span>  <span>  Your Conversion Rate </span>  </div>
+    
+    <div class="res-box">  <span class="res-value"> <span class="q-leads"> 0.0  </span></span>  <span> Avg. Qualified Leads/Month </span>  </div>
+    
+    <div class="res-box">  <span class="res-value"> <span class="new-customer"> 0.0  </span> </span>  <span>  Avg. New Customers/Month </span>  </div>
+    
+    <div class="res-box">  <span class="res-value"> $  <span class="t-rev"> 0.00  </span> </span>  <span> Total New Revenue </span>  </div>
+    
+</div>
+
+    
+
+    </div>	
+    
+    </div>
+    
+    </div>
+    
+    
+    </section>
+    
+    
+    
+    
+    
+    
+    <section class="impact-sctn">
+        
+        <div class="wrapper">
+            
+            <div class="btm-line-outr">
+                <h2> BOTTOM LINE IMPACT </h2>
+      <div class="btm-line-cntnr"> 
+          
+          
+          
+          <div class="g-box">  
+    
+              <div class="value-cntnr">  <span class="plus">+</span> $<span id="v1" class="v1">0.00 </span>  </div>  
+              <div class="title-cntnr">  <span> With 1% Increase in Conversion Rate </span>   </div>
+          </div>
+          
+          
+          <div class="g-box">  
+              
+              <div class="value-cntnr">  <span class="plus">+</span> $<span id="v2" class="v2">0.00 </span>  </div>  
+              <div class="title-cntnr">  <span> With 30% increase in Website Traffic </span>   </div>
+    
+          </div>
+          
+    
+    
+          <div class="g-box">  
+              
+              <div class="value-cntnr">  <span class="plus">+</span> $<span id="v3" class="v3">0.00 </span>  </div>  
+              <div class="title-cntnr">  <span> With 1% Increase in Conversion Rate & 30% in Website Traffic </span>   </div>
+              
+    
+    
+            </div>
+    
+    
+            
+       </div>
+       
+       
+       <!-- <div class="dwnld-cntnr">  <div class="dwnld-btn" id="popup-btn"> Download Results </div>  </div> -->
+    
+    
+    </div>
+    
+</div>
+    
+
+    
+    </section>
+    
+    
+    
+    <section class="sim">
+        
+    <div class="wrapper">
+        
+    <div class="okk">
+    <div>
+        <div style="font-size: 32px;font-weight: bold;padding-bottom: 30px;color:blue">Current Website Metrics
+        </div>
+        <div style="border:solid 1px black;padding: 10px;font-size: 20px"> <span> Average Monthly traffic :</span> <span class="month-traffic" style="font-size: 20px">   </span>  </div>
+        <div style="border:solid 1px black;padding: 10px;font-size: 20px"> <span>Average Monthly Leads :  </span> <span class="month-leads" style="font-size: 20px">  </span> </div>
+        <div style="border:solid 1px black;padding: 10px;font-size: 20px"> <span>Percentage of Qualified leads :  </span> <span class="month-qualified" style="font-size: 20px">  </span>%</div>
+        <div style="border:solid 1px black;padding: 10px;font-size: 20px"> <span> Close Rate :</span> <span class="month-close" style="font-size: 20px"> </span>%</div>
+        <div style="border:solid 1px black;padding: 10px;font-size: 20px"> <span>Customer lifetime Value :</span> $<span class="month-tot" style="font-size: 20px"> </span> </div>
+    </div>
+    <div class="pdf-res-cntnr">
+    <div class="res-box" style="padding: 10px;font-size: 20px">   <span>  Your Conversion Rate :</span>  <span class="res-value"> <span class=" conv-rate">0 </span> %  </span> </div>
+    <div class="res-box" style="padding: 10px;font-size: 20px">    <span> Avg. Qualified Leads/Month :</span>  <span class="res-value"> <span class="q-leads"> 0.0  </span></span> </div>
+    <div class="res-box" style="padding: 10px;font-size: 20px">   <span>  Avg. New Customers/Month : </span>  <span class="res-value"> <span class="new-customer"> 0.0  </span> </span>  </div>
+    <div class="res-box" style="padding: 10px;font-size: 20px">  <span> Total New Revenue : </span>   <span class="res-value"> $  <span class=" t-rev"> 0.00  </span> </span>  </div>
+</div>
+    <h2 style="font-size: 28px;color:blue">Revenue Growth Potential
+    </h2>
+    <div class="btm-line-cntnr">
+        
+        <div class="g-box" style="display: inline-block;">
+            <div class="value-cntnr" style="padding: 10px;font-size: 20px">  <span class="plus">+</span> $<span id="v1" class="v1">0.00 </span> <span > With 1% Increase in Conversion Rate </span>   </div>
+            
+        </div>
+        <div class="g-box">
+            <div class="value-cntnr" style="padding: 10px;font-size: 20px">  <span class="plus">+</span> $<span id="v2" class="v2">0.00 </span>  <span> With 30% increase in Website Traffic </span> </div>
+            
+        </div>
+        <div class="g-box">
+            <div class="value-cntnr" style="padding: 10px;font-size: 20px">  <span class="plus">+</span> $<span id="v3" class="v3">0.00 </span>  <span> With 1% Increase in Conversion Rate & 30% in Website Traffic </span> </div>
+            
+        </div>
+       </div>
+    </div>
+    </div>
+    </section>
+    
+    
+    
+    </main>
+    
+    
+    <div class="form-overlay"></div>
+    <div class="fixed email-container">
+        <div>
+            <h3>Download the PDF of your results by filling out the form below!</h3>
+            <!-- 		<form action="#"> -->
+                <input type="email" id="email-address" required>
+                <button type="submit" id="dwnld-btn">SUMBIT</button>
+    <!-- 		</form> -->
+        </div>
+    </div>
+    
+    <script src="{% static 'js/roi.js' %}"></script>

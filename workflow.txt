@@ -1,0 +1,64 @@
+###
+Maintainer and Developers Team.
+--------------------------
+Name : Abhishek Kushwaha (Bhopal)
+Mobile : 9039818826
+Email : abhishekushwaha620@gmail.com
+
+----------------------------
+* FrontEnd Designer
+Deepak Silawat (Bhopal)
+mobile : 9131116073
+email : deepak9039277009@gmail.com
+
+----------------------------
+* Content Writer
+Narendra Ahirwar (Bhopal)
+mobile 7770909149
+email : narender7770@gmail.com
+
+
+
+######################################################
+Run The code by following Procedure
+######################################################
+
+1. check the path on terminal
+
+|-  */gearuplead
+
+2. Check the Command 
+|-  python 
+|- pip
+~ If both Command is not working then please Download Python from here > https://www.python.org/
+
+3. Download Install All the depandancies.
+|- pip install -r requirements.txt 
+
+4. Check, Is Django installed Successfully.
+|- django-admin
+
+5. Run the Commands.
+|- python manage.py makemigrations
+|- python manage.py migrate
+
+6. Creating Admin User.
+|- python manage.py createsuperuser  
+    |- Username : < WRITE USERNAME >
+    |- Email : < WRITE EMAIL >
+    |- Password : < CREARE PASSWORD >
+    |- Confirm Password : <>
+
+7. Starting the Local Server.
+|- python manage.py runserver
+
+## Your Local Server is Started on Your `Local Machine`
+
+8. open browser write search url
+|- https://127.0.0.1:8000
+
+# All Pages are Dynamic will not see any Contents you need to write content in your Local database by going to admin
+9. Local Admin url  create by you
+|- https://127.0.0.1:8000/admin/
+
+############### ALL THE BEST ########################
