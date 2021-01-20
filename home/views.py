@@ -12,7 +12,8 @@ from .models import (
     About_us,
     Write_about_us,
     FAQ,
-    Home_Contact_Booking
+    Home_Contact_Booking,
+    Home_Contact_Booking_contents
 )
 from django.views.generic import ListView
 from django.contrib import messages
@@ -26,6 +27,7 @@ def index(request):
     section4 = Why_Choose_us.objects.first()
     section5 = Our_client.objects.first()
     section6 = Home_section_last.objects.first()
+    HomeBooking = Home_Contact_Booking_contents.objects.first()
     faqs = FAQ.objects.all()
     # print(section1.heading)
 
@@ -37,7 +39,7 @@ def index(request):
         message = request.POST["message"]
         print(type(number))
         Home_Contact_Booking.objects.create(name=name,email=email,number=number,message=message).save()
-        messages.success(request,'Your message is saved please do not submit again withen 24 hour Our Company Contact You !')
+        messages.success(request,'Your message is saved please do not submit again, We will Contact You Soon!')
         return redirect("home")
 
 
@@ -52,6 +54,7 @@ def index(request):
         "section5" : section5,
         "section6" : section6,
         "faqs" : faqs,
+        "HomeBooking" : HomeBooking,
     })
 
 class BlogList(ListView):

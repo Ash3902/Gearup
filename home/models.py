@@ -2,6 +2,12 @@ from django.db import models
 from tinymce import HTMLField
 from django.template.defaultfilters import slugify
 # Create your models here.
+class Home_Contact_Booking_contents(models.Model):
+    heading = models.CharField(max_length=100)
+    content = HTMLField()
+
+    def __str__(self):
+        return self.heading
 
 class Home_Contact_Booking(models.Model):
     name = models.CharField(max_length=20)

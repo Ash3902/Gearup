@@ -20,12 +20,19 @@
 </section>
 
 <section>
-    <div class="container pt-5">
-        <h2 class="text-center text-capitalize pt-3" style="color: #2e4862;">What Is Gearuplead Relation Ship And How to we Help A <br> People for businees        </h2>
+    <div class="container  pt-5">
+        <h2 class="text-capitalize text-center container pt-3 col-md-8" style="color: #2e4862;">
+            <!-- What Is Gearuplead Relation Ship And How to we Help A <br> People for businees         -->
+            <span>
+                {{HomeBooking.heading}}
+
+            </span>
+        </h2>
         <hr class="mx-auto mt-4" style="border-bottom: 4px solid ; width:10%;">
-        <div class="row mx-auto">
-            <div class="col-md-6 pt-5">
-                <h3 class=" text-capitalize" style="color: #2e4862;">A Trusted Gear Up Lead Relation Ship Services Company</h3> 
+        <div class="row mx-auto align-items-center">
+            <div class="pt-5 col-md-6">
+                {{HomeBooking.content|safe}}
+                <!-- <h3 class=" text-capitalize" style="color: #2e4862;">A Trusted Gear Up Lead Relation Ship Services Company</h3> 
                 <h5 class="pt-4 text-capitalize" style="color: #6e6e6e;">Our Full Funnel Lead generation and appointment setting solutions are capable of generating:</h5>   
                 <p class="pt-4 text-capitalize" style="color: #6e6e6e;font-size:18px;">when it comes to the gear up lead Relatiion Ship service we understand that both value and quality of the lead and we are highly important. gear up lead use and search the marketing comppnies data and then collect the data of company then after that we are serve the west business of the buyers. the gear up lead delivered are the 100% qualified and 100% opted in.</p>
                 
@@ -42,7 +49,7 @@
                 <p class="pt-5 text-capitalize" style="color: #6e6e6e;font-size:18px;">Among The top Marketing Technology Solution providers according to gearuplead.com
                 </p>
                 <p class="text-capitalize" style="color: #6e6e6e;font-size:18px;">GearUpLead has been the best in class in providing the Lead Relation ship services for tech companies
-                </p>
+                </p> -->
             </div>
             <div class="col-md-6 p-lg-5">
                 <form class=" shadow" action="" method="POST">{% csrf_token %}
@@ -50,28 +57,11 @@
                         <h4 style="color: #2e4862; font-size:30px;">Let’s Discuss More About Your Business Needs!</h4>
                         <p class="pt-3" style="color: #2e4862;"><svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
-                          </svg> Call +91-9039818826</p>
-                          <h6 class="pt-3" style="color: #2e4862;">I WOULD LIKE TO LEARN MORE ON:*</h6>
-                          <div class="form-group form-check pt-4" style="color: #2e4862;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Account-Based Marketing</label>
-                          </div>
-                          <div class="form-group form-check pt-1" style="color: #2e4862;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Lead Generation</label>
-                          </div>
-                          <div class="form-group form-check pt-1" style="color: #2e4862;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Install base targeting </label>
-                          </div>
-                          <div class="form-group form-check pt-1" style="color: #2e4862;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Appointment settings </label>
-                          </div>
-                          <div class="form-group form-check pt-1" style="color: #2e4862;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Content syndication</label>
-                          </div>
+                          </svg> Call 
+                          <a href="tel:+917795724941">+91-7795724941</a>
+                          
+                        </p>
+                          
                           <div class="form-group pt-4">
                             <label style="color: #2e4862; font-size:18px;" class="" for="exampleInputEmail1"> <b>Name</b></label>
                             <input type="text" name="name" class="form-control shadow-none pt-2" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -89,7 +79,7 @@
                             <textarea class="form-control shadow-none" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
                           </div>
                           <p class="pt-4">
-                              <button type="submit" class="btn btn-success btn-lg btn-block">Book a trial</button>
+                              <button type="submit" class="btn btn-outline-success btn-lg btn-block">Book a trial</button>
                           </p>
                     </div>
                    

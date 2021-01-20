@@ -63,6 +63,7 @@ admin.site.register(Contact_us)
 admin.site.register(Blog)
 admin.site.register(Write_about_us)
 admin.site.register(FAQ)
+admin.site.register(Home_Contact_Booking_contents)
 
 
 admin.site.site_title = "GearUpLead"
