@@ -11,11 +11,12 @@
     color:rgb(0, 132, 255) !important;
     border-bottom: 1px solid rgb(0, 132, 255);
   }
+  
   #back-top_button{
     z-index: 100;
     position: fixed;
-    top:90%;
-    right:10%
+    top:75%;
+    right:2%
     /* transform: translate(90%,10%) ; */
   }
   html{
