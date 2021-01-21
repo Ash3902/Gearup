@@ -1,12 +1,12 @@
 {% load static %}
 {% block style %}
 <style>
-  @media (min-width: 200px) {
-    .dropdown {
-    height: auto !important;
-    overflow: visible !important;
-    }    
-    }
+ 
+  .dropdown:hover>.dropdown-menu
+{
+  display: block;
+}
+
 </style>
 {% endblock style %}
 <nav class="navbar navbar-expand-lg text-white navbar-light bg-white ">

@@ -4,6 +4,16 @@
 {% block navID %}homeNav{% endblock navID %}
 {% block style %} 
 {% endblock style %}
+<style>
+    @media only screen and (min-width: 200px)
+    {
+    .dropdown:hover>.dropdown-menu
+    {
+    display: block;
+    }
+
+    }
+</style>
 {% block content %}
 <section class="home_section" style="background-image: url('{%if section1.background_image %}{{section1.background_image.url}}{%else%}{%endif%}');">
     <div class="" style="width: 100%; height:85vh; background-color:rgba(0,0,0,0.5);">
@@ -206,7 +216,13 @@
         cursor: pointer;
     }
 </style>
-<section class="mt-5 book_section">
+
+<div class="py-5"></div>
+
+{%include 'roi.html' %}
+
+
+<section class=" book_section">
     <div class="container col-md-8">
         <h1 class="text-center p-5" style="color: #2e4862;">F A Q</h1>
         <div class="accordion" id="accordionExample">
@@ -234,7 +250,7 @@
     </div>
 </section>
 
-{%include 'roi.html' %}
+
 
 {% endblock content %}
 

@@ -80,7 +80,10 @@
               myModal.show()
               
             "{% endfor %}"
-  
+      
+        document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
+
+
     </script>
   </body>
   

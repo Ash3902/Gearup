@@ -13,7 +13,6 @@
           body.style.padding = "0px";
         }
     });  
-    document.getElementById(`{% block navID %}{% endblock navID %}`).classList.add("nav-active") 
 
 
 
